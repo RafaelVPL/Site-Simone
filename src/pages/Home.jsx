@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <>
       <div className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}`}>
-        <div className="home-left" ref={leftRef}>
+        <div className="home-left caduceus-bg" ref={leftRef}>
           <h1 style={{ fontFamily: 'Tangerine', fontSize: '4rem' }}>Dra. Simone L. S. Deo</h1>
           <h2>Psiquiatria</h2>
           <p style={{ fontWeight: 600, fontSize: '1.15rem', color: '#232946' }}>

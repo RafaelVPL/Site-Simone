@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import lightBg from './assets/1452.jpg';
 import darkBg from './assets/1668.jpg';
@@ -26,6 +26,21 @@ function App() {
     setDarkMode((prev) => !prev);
   };
 
+  // Dropdown for mobile menu
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef();
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [dropdownOpen]);
+
   return (
     <>
       {/* Site background texture for all pages */}
@@ -37,7 +52,6 @@ function App() {
       />
       <Router>
         <div style={{ position: 'relative', minHeight: '100vh' }}>
-          {/* ...removed flower background... */}
           <div className="topbar">
             <span className="topbar-title">Bem vindo!</span>
             <nav className="topbar-links">
@@ -51,6 +65,35 @@ function App() {
             >
               <span className="topbar-mode-icon">{darkMode ? '🌙' : '☀️'}</span>
             </button>
+            {/* Mobile dropdown menu */}
+            <div
+              className={`topbar-dropdown${dropdownOpen ? ' open' : ''}`}
+              ref={dropdownRef}
+              style={{ display: window.innerWidth <= 900 ? 'inline-block' : 'none' }}
+            >
+              <button
+                className="topbar-dropdown-btn"
+                onClick={() => setDropdownOpen((open) => !open)}
+                aria-label="Abrir menu"
+              >
+                <span className="dropdown-icon">
+                  <span className="dropdown-icon-bar"></span>
+                  <span className="dropdown-icon-bar"></span>
+                  <span className="dropdown-icon-bar"></span>
+                </span>
+              </button>
+              <div className="topbar-dropdown-list">
+                <Link to="/" className="topbar-dropdown-link" onClick={() => setDropdownOpen(false)}>Início</Link>
+                <Link to="/contact" className="topbar-dropdown-link" onClick={() => setDropdownOpen(false)}>Contatos</Link>
+                <button
+                  className="topbar-dropdown-mode-btn"
+                  onClick={() => { handleToggleMode(); setDropdownOpen(false); }}
+                  aria-label="Alternar modo claro/escuro"
+                >
+                  {darkMode ? '🌙 Modo Escuro' : '☀️ Modo Claro'}
+                </button>
+              </div>
+            </div>
           </div>
           <div className="main-content">
             <Routes>
@@ -58,7 +101,6 @@ function App() {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
-          {/* Gradient light effect at bottom */}
           <div className="bottom-gradient-effect" />
         </div>
       </Router>

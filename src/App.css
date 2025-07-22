@@ -239,3 +239,114 @@ html.dark .bottom-gradient-effect {
   background-size: 420px 420px;
   transition: opacity 0.18s cubic-bezier(.23,1.01,.32,1), background-image 0.18s cubic-bezier(.23,1.01,.32,1);
 }
+
+/* Responsive topbar for mobile */
+@media (max-width: 900px) {
+  .topbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  .topbar-links {
+    display: none;
+  }
+  .topbar-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  .topbar-dropdown-btn {
+    background: #FFC1B6;
+    color: #fff;
+    border: 2.5px solid #FFD6CE;
+    border-radius: 0.7rem;
+    font-size: 1.3rem;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(255,193,182,0.12);
+    transition: background 0.5s, color 0.5s, border-color 0.5s, box-shadow 0.5s;
+    position: relative;
+  }
+  .topbar-dropdown-btn .dropdown-icon {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.2em;
+    vertical-align: middle;
+  }
+  .topbar-dropdown-btn .dropdown-icon-bar {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #181818;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+  html.dark .topbar-dropdown-btn .dropdown-icon-bar {
+    background: #181818;
+  }
+  .topbar-dropdown-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    min-width: 160px;
+    background: #fff;
+    border-radius: 0.7rem;
+    box-shadow: 0 2px 18px rgba(40,60,120,0.14);
+    padding: 0.7rem 0.3rem;
+    z-index: 1001;
+    flex-direction: column;
+    gap: 0.7rem;
+    text-align: left;
+    overflow: hidden;
+  }
+  .topbar-dropdown.open .topbar-dropdown-list {
+    display: flex;
+  }
+  .topbar-dropdown-link {
+    background: none;
+    border: none;
+    color: #232946;
+    font-size: 1.08rem;
+    font-weight: 500;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .topbar-dropdown-link:hover {
+    background: #FFD700;
+    color: #181818;
+    box-shadow: none;
+  }
+  .topbar-dropdown-mode-btn {
+    background: #FFC1B6;
+    border: none;
+    color: #fff;
+    border-radius: 0.7rem;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(255,193,182,0.10);
+    padding: 0.4rem 1rem;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s, color 0.2s;
+  }
+  .topbar-mode-btn {
+    display: none;
+  }
+}
