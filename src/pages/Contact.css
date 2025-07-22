@@ -1,0 +1,146 @@
+/* Basic contact page styling */
+.contact-page {
+  max-width: 600px;
+  margin: 5rem auto 2rem auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  background: rgba(255,255,255,0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 24px rgba(40,60,120,0.10);
+  text-align: left;
+  position: relative;
+}
+
+.contact-page-centered {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #232946;
+  text-align: center;
+  background: none;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-list-centered {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+.contact-item {
+  font-size: 1.18rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.contact-item-centered {
+  font-size: 1.18rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: none;
+}
+
+.contact-label {
+  font-weight: 700;
+  color: #181818;
+}
+
+.contact-value {
+  font-weight: 600;
+  font-size: 1.18rem;
+  text-decoration: none;
+  transition: color 0.18s cubic-bezier(.23,1.01,.32,1);
+}
+
+.contact-whatsapp {
+  color: #25d366;
+}
+.contact-whatsapp:hover {
+  color: #128c7e;
+}
+
+.contact-email {
+  color: #ff5c8a;
+}
+html.dark .contact-email {
+  color: #14316c;
+}
+
+.contact-emergency {
+  color: #e11d48;
+}
+
+.contact-desc {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 400;
+}
+
+/* Dark mode for contact page */
+html.dark .contact-page {
+  background: rgba(35,41,70,0.92);
+  color: #eebbc3;
+}
+html.dark .contact-title {
+  color: #eebbc3;
+}
+html.dark .contact-label {
+  color: #eebbc3;
+}
+html.dark .contact-desc {
+  color: #b8b8b8;
+}
+
+.contact-label,
+.contact-title,
+.contact-desc {
+  color: #181818 !important;
+}
+
+html.dark .contact-label,
+html.dark .contact-title,
+html.dark .contact-desc {
+  color: #181818 !important;
+}
+
+/* Numbers and email keep their color */
+.contact-whatsapp {
+  color: #25d366 !important;
+}
+html.dark .contact-whatsapp {
+  color: #ff8800 !important; /* orange for dark mode */
+}
+.contact-email {
+  color: #ff5c8a !important;
+}
+html.dark .contact-email {
+  color: #14316c !important;
+}
+.contact-emergency {
+  color: #e11d48 !important;
+}
