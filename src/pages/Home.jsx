@@ -68,13 +68,39 @@ export default function Home() {
     };
   }, [instagramEmbeds.length, facebookEmbeds.length]);
 
+  // Detect mobile device for scaling
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 900);
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <div className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}`}>
         <div className="home-left caduceus-bg" ref={leftRef}>
-          <h1 style={{ fontFamily: 'Tangerine', fontSize: '4rem' }}>Dra. Simone L. S. Deo</h1>
-          <h2>Psiquiatria</h2>
-          <p style={{ fontWeight: 600, fontSize: '1.15rem', color: '#232946' }}>
+          <h1 style={{
+            fontFamily: 'Tangerine',
+            fontSize: isMobile ? '2.1rem' : '4rem'
+          }}>Dra. Simone L. S. Deo</h1>
+          <h2 style={{
+            fontSize: isMobile ? '1.1rem' : '1.3rem',
+            marginBottom: isMobile ? '0.8rem' : '1.2rem'
+          }}>Psiquiatria</h2>
+          <p style={{
+            fontWeight: isMobile ? 500 : 600,
+            fontSize: isMobile ? '0.97rem' : '1.15rem',
+            color: '#232946',
+            lineHeight: isMobile ? '1.13' : '1.22',
+            maxWidth: isMobile ? '98vw' : '680px',
+            marginLeft: isMobile ? 0 : '-1.2rem',
+            marginRight: isMobile ? 0 : '-1.2rem',
+            padding: isMobile ? '0 0.2rem' : undefined
+          }}>
             Sou médica, com pós-graduação em Medicina Interna, Psiquiatria e Psicofarmacologia.<br /><br />
             Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
             Meu compromisso é oferecer um cuidado personalizado, respeitando as necessidades e objetivos de cada paciente.<br /><br />
@@ -83,7 +109,9 @@ export default function Home() {
             A estabilidade começa com um firme propósito da pessoa tomar as rédeas da própria vida, e eu me proponho a ser acessível, e a caminharmos juntos rumo aos seus objetivos.<br /><br />
             Caso tenha mais dúvidas, entre em contato hoje mesmo.
           </p>
-          <h2>CRM 52.076388-8</h2>
+          <h2 style={{
+            fontSize: isMobile ? '1.1rem' : '1.3rem'
+          }}>CRM 52.076388-8</h2>
         </div>
         <div className="home-right" ref={rightRef}>
           <img
@@ -95,7 +123,10 @@ export default function Home() {
                 typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
                   ? '#6c63ff'
                   : '#FFD700'
-              }`
+              }`,
+              maxWidth: isMobile ? '70vw' : '540px',
+              width: isMobile ? '70vw' : '100%',
+              borderWidth: isMobile ? '5px' : '8px'
             }}
           />
         </div>
@@ -103,16 +134,25 @@ export default function Home() {
       <div
         className={`contact-section contact-section-centered ${visible[2] ? 'pop-in' : 'pop-out'}`}
         ref={contactRef}
-        style={{ marginTop: '0.5rem', marginBottom: '1.2rem' }}
+        style={{
+          marginTop: isMobile ? '0.5rem' : '0.5rem',
+          marginBottom: isMobile ? '1.2rem' : '1.2rem',
+          gap: isMobile ? '1rem' : '1.2rem',
+          padding: isMobile ? '0 0.5rem' : undefined
+        }}
       >
-        <div className="contact-buttons">
+        <div className="contact-buttons" style={{ gap: isMobile ? '0.7rem' : '1.2rem', padding: isMobile ? '0 0.2rem' : undefined }}>
           <a
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             className="contact-btn main-contact"
             title="Contato via WhatsApp"
-            style={{ fontSize: '1.25rem', padding: '1.3rem 2.6rem' }}
+            style={{
+              fontSize: isMobile ? '0.95rem' : '1.25rem',
+              padding: isMobile ? '0.7rem 0.8rem' : '1.3rem 2.6rem',
+              borderRadius: '0.7rem'
+            }}
           >
             Contato via WhatsApp
           </a>
@@ -138,18 +178,38 @@ export default function Home() {
       </div>
       <div className={`home-layout container py-5 ${visible[3] ? 'pop-in-main' : 'pop-out-main'}`}>
         <div className="home-left" ref={mapsRef}>
-          <div className="maps-bar-title" style={{ textAlign: 'center', width: '100%' }}>
+          <div className="maps-bar-title" style={{
+            textAlign: 'center',
+            width: '100%',
+            fontSize: isMobile ? '0.92rem' : undefined,
+            marginBottom: isMobile ? '0.5rem' : undefined,
+            padding: isMobile ? '0 0.1rem' : undefined
+          }}>
             <span style={{ color: '#181818' }}>Endereço para as consultas:</span>
             <div
               className={typeof window !== "undefined" && window.document.documentElement.classList.contains('dark') ? "maps-address-dark" : "maps-address-light"}
+              style={{
+                fontSize: isMobile ? '0.85rem' : undefined,
+                padding: isMobile ? '0 0.1rem' : undefined,
+                marginTop: isMobile ? '0.1rem' : undefined
+              }}
             >
               {clinicAddress}
             </div>
           </div>
-          <div className="maps-bar-single-inner" style={{ justifyContent: 'center' }}>
+          <div className="maps-bar-single-inner" style={{
+            justifyContent: 'center',
+            minWidth: isMobile ? 0 : '540px',
+            minHeight: isMobile ? 0 : '440px',
+            width: isMobile ? '92vw' : '800px',
+            height: isMobile ? '210px' : '640px',
+            padding: 0,
+            margin: '0 auto',
+            alignItems: 'center'
+          }}>
             <div style={{
-              width: '800px',
-              height: '640px',
+              width: isMobile ? '92vw' : '800px',
+              height: isMobile ? '210px' : '640px',
               borderRadius: '1.2rem',
               overflow: 'hidden',
               boxShadow: '0 2px 18px rgba(40,60,120,0.14)',
@@ -162,13 +222,14 @@ export default function Home() {
               <iframe
                 title="Localização da Clínica"
                 src={googleMapsEmbedUrl}
-                width="800"
-                height="640"
+                width={isMobile ? '92vw' : '800'}
+                height={isMobile ? '210' : '640'}
                 style={{
                   border: 0,
                   width: '100%',
                   height: '100%',
-                  display: 'block'
+                  display: 'block',
+                  borderRadius: '1.2rem'
                 }}
                 allowFullScreen=""
                 loading="lazy"
@@ -177,31 +238,61 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="home-right" style={{ alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ width: '360px', height: '380px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
+        <div className="home-right" style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <div style={{
+            width: isMobile ? '90vw' : '360px',
+            height: isMobile ? '220px' : '380px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '2rem'
+          }}>
             <iframe
               title="Facebook Post"
               src={facebookEmbeds[currentFacebookEmbed]}
-              width="360"
-              height="380"
-              style={{ border: 'none', overflow: 'hidden', borderRadius: '1.2rem', background: '#fff' }}
+              width={isMobile ? '90vw' : '360'}
+              height={isMobile ? '220' : '380'}
+              style={{
+                border: 'none',
+                overflow: 'hidden',
+                borderRadius: '1.2rem',
+                background: '#fff',
+                width: '100%',
+                height: '100%'
+              }}
               scrolling="no"
               frameBorder="0"
               allowFullScreen={true}
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             ></iframe>
           </div>
-          <div style={{ width: '390px', height: '390px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{
+            width: isMobile ? '90vw' : '390px',
+            height: isMobile ? '220px' : '390px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
             <iframe
               title="Instagram Post"
               src={instagramEmbeds[currentInstagramEmbed]}
-              width="350"
-              height="390"
+              width={isMobile ? '90vw' : '350'}
+              height={isMobile ? '220' : '390'}
               frameBorder="0"
               scrolling="no"
               allowtransparency="true"
               allow="encrypted-media"
-              style={{ borderRadius: '1.2rem', background: '#fff' }}
+              style={{
+                borderRadius: '1.2rem',
+                background: '#fff',
+                width: '100%',
+                height: '100%'
+              }}
             ></iframe>
           </div>
         </div>
