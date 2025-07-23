@@ -28,7 +28,9 @@
   },
   "homepage": "https://rafaelvpl.github.io/Site-Simone",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
   }
 }
