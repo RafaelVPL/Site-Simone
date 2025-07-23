@@ -68,11 +68,17 @@ export default function Home() {
     };
   }, [instagramEmbeds.length, facebookEmbeds.length]);
 
-  // Detect mobile device for scaling
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+  // Detect mobile device using user agent (more reliable for mobile browsers)
+  function getIsMobile() {
+    if (typeof navigator !== "undefined") {
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    return window.innerWidth <= 900;
+  }
+  const [isMobile, setIsMobile] = useState(getIsMobile());
   useEffect(() => {
     function handleResize() {
-      setIsMobile(window.innerWidth <= 900);
+      setIsMobile(getIsMobile());
     }
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -81,55 +87,106 @@ export default function Home() {
 
   return (
     <>
-      <div className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}`}>
-        <div className="home-left caduceus-bg" ref={leftRef}>
-          <h1 style={{
-            fontFamily: 'Tangerine',
-            fontSize: isMobile ? '2.1rem' : '4rem'
-          }}>Dra. Simone L. S. Deo</h1>
-          <h2 style={{
-            fontSize: isMobile ? '1.1rem' : '1.3rem',
-            marginBottom: isMobile ? '0.8rem' : '1.2rem'
-          }}>Psiquiatria</h2>
-          <p style={{
-            fontWeight: isMobile ? 500 : 600,
-            fontSize: isMobile ? '0.97rem' : '1.15rem',
-            color: '#232946',
-            lineHeight: isMobile ? '1.13' : '1.22',
-            maxWidth: isMobile ? '98vw' : '680px',
-            marginLeft: isMobile ? 0 : '-1.2rem',
-            marginRight: isMobile ? 0 : '-1.2rem',
-            padding: isMobile ? '0 0.2rem' : undefined
-          }}>
-            Sou médica, com pós-graduação em Medicina Interna, Psiquiatria e Psicofarmacologia.<br /><br />
-            Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
-            Meu compromisso é oferecer um cuidado personalizado, respeitando as necessidades e objetivos de cada paciente.<br /><br />
-            Mais do que tratar a mente, meu propósito é cuidar das pessoas - escutando, orientando e criando um plano de tratamento individualizado que faça sentido para sua rotina e seu momento de vida.<br /><br />
-            A saúde mental é um reflexo do que cultivamos dentro e fora. Assim sendo, não é alcançado somente através de remédios.<br /><br />
-            A estabilidade começa com um firme propósito da pessoa tomar as rédeas da própria vida, e eu me proponho a ser acessível, e a caminharmos juntos rumo aos seus objetivos.<br /><br />
-            Caso tenha mais dúvidas, entre em contato hoje mesmo.
-          </p>
-          <h2 style={{
-            fontSize: isMobile ? '1.1rem' : '1.3rem'
-          }}>CRM 52.076388-8</h2>
-        </div>
-        <div className="home-right" ref={rightRef}>
-          <img
-            src={simoneImg}
-            alt=""
-            className="home-photo"
-            style={{
-              border: `8px solid ${
-                typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
-                  ? '#6c63ff'
-                  : '#FFD700'
-              }`,
-              maxWidth: isMobile ? '70vw' : '540px',
-              width: isMobile ? '70vw' : '100%',
-              borderWidth: isMobile ? '5px' : '8px'
-            }}
-          />
-        </div>
+      <div className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}${isMobile ? ' mobile-layout' : ''}`}>
+        {isMobile ? (
+          <>
+            <div className="home-left caduceus-bg" ref={leftRef}>
+              <h1 style={{
+                fontFamily: 'Tangerine',
+                fontSize: '2.1rem'
+              }}>Dra. Simone L. S. Deo</h1>
+              <h2 style={{
+                fontSize: '1.1rem',
+                marginBottom: '0.8rem'
+              }}>Psiquiatria</h2>
+              <p style={{
+                fontWeight: 500,
+                fontSize: '0.97rem',
+                color: '#232946',
+                lineHeight: '1.13',
+                maxWidth: '98vw',
+                marginLeft: 0,
+                marginRight: 0,
+                padding: '0 0.2rem'
+              }}>
+                Sou médica, com pós-graduação em Medicina Interna, Psiquiatria e Psicofarmacologia.<br /><br />
+                Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
+                Meu compromisso é oferecer um cuidado personalizado, respeitando as necessidades e objetivos de cada paciente.<br /><br />
+                Mais do que tratar a mente, meu propósito é cuidar das pessoas - escutando, orientando e criando um plano de tratamento individualizado que faça sentido para sua rotina e seu momento de vida.<br /><br />
+                A saúde mental é um reflexo do que cultivamos dentro e fora. Assim sendo, não é alcançado somente através de remédios.<br /><br />
+                A estabilidade começa com um firme propósito da pessoa tomar as rédeas da própria vida, e eu me proponho a ser acessível, e a caminharmos juntos rumo aos seus objetivos.<br /><br />
+                Caso tenha mais dúvidas, entre em contato hoje mesmo.
+              </p>
+              <h2 style={{
+                fontSize: '1.1rem'
+              }}>CRM 52.076388-8</h2>
+              <img
+                src={simoneImg}
+                alt=""
+                className="home-photo"
+                style={{
+                  border: `5px solid ${
+                    typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
+                      ? '#6c63ff'
+                      : '#FFD700'
+                  }`,
+                  maxWidth: '70vw',
+                  width: '70vw'
+                }}
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="home-left caduceus-bg" ref={leftRef}>
+              {/* ...existing code for desktop left... */}
+              <h1 style={{
+                fontFamily: 'Tangerine',
+                fontSize: '4rem'
+              }}>Dra. Simone L. S. Deo</h1>
+              <h2 style={{
+                fontSize: '1.3rem',
+                marginBottom: '1.2rem'
+              }}>Psiquiatria</h2>
+              <p style={{
+                fontWeight: 600,
+                fontSize: '1.15rem',
+                color: '#232946',
+                lineHeight: '1.22',
+                maxWidth: '680px',
+                marginLeft: '-1.2rem',
+                marginRight: '-1.2rem'
+              }}>
+                Sou médica, com pós-graduação em Medicina Interna, Psiquiatria e Psicofarmacologia.<br /><br />
+                Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
+                Meu compromisso é oferecer um cuidado personalizado, respeitando as necessidades e objetivos de cada paciente.<br /><br />
+                Mais do que tratar a mente, meu propósito é cuidar das pessoas - escutando, orientando e criando um plano de tratamento individualizado que faça sentido para sua rotina e seu momento de vida.<br /><br />
+                A saúde mental é um reflexo do que cultivamos dentro e fora. Assim sendo, não é alcançado somente através de remédios.<br /><br />
+                A estabilidade começa com um firme propósito da pessoa tomar as rédeas da própria vida, e eu me proponho a ser acessível, e a caminharmos juntos rumo aos seus objetivos.<br /><br />
+                Caso tenha mais dúvidas, entre em contato hoje mesmo.
+              </p>
+              <h2 style={{
+                fontSize: '1.3rem'
+              }}>CRM 52.076388-8</h2>
+            </div>
+            <div className="home-right" ref={rightRef}>
+              <img
+                src={simoneImg}
+                alt=""
+                className="home-photo"
+                style={{
+                  border: `8px solid ${
+                    typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
+                      ? '#6c63ff'
+                      : '#FFD700'
+                  }`,
+                  maxWidth: '540px',
+                  width: '100%'
+                }}
+              />
+            </div>
+          </>
+        )}
       </div>
       <div
         className={`contact-section contact-section-centered ${visible[2] ? 'pop-in' : 'pop-out'}`}
