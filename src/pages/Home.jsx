@@ -87,27 +87,54 @@ export default function Home() {
 
   return (
     <>
-      <div className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}${isMobile ? ' mobile-layout' : ''}`}>
+      <div
+        className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}${isMobile ? ' mobile-layout' : ''}`}
+        style={isMobile ? {
+          width: '100vw',
+          maxWidth: '100vw',
+          minHeight: 'unset',
+          flexDirection: 'column',
+          padding: 0,
+          gap: 0,
+          marginTop: 0,
+          overflowX: 'hidden'
+        } : undefined}
+      >
         {isMobile ? (
           <>
-            <div className="home-left caduceus-bg" ref={leftRef}>
+            <div
+              className="home-left caduceus-bg"
+              ref={leftRef}
+              style={{
+                width: '100vw',
+                maxWidth: '100vw',
+                minWidth: 0,
+                height: 'auto',
+                padding: '2.5rem 0.7rem 2.2rem 0.7rem',
+                margin: '0 auto',
+                boxSizing: 'border-box',
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'relative',
+                textAlign: 'center'
+              }}
+            >
               <h1 style={{
                 fontFamily: 'Tangerine',
-                fontSize: '2.1rem'
+                fontSize: '2.3rem'
               }}>Dra. Simone L. S. Deo</h1>
               <h2 style={{
-                fontSize: '1.1rem',
-                marginBottom: '0.8rem'
+                fontSize: '1.2rem',
+                marginBottom: '1rem'
               }}>Psiquiatria</h2>
               <p style={{
                 fontWeight: 500,
-                fontSize: '0.97rem',
+                fontSize: '1.08rem',
                 color: '#232946',
-                lineHeight: '1.13',
-                maxWidth: '98vw',
-                marginLeft: 0,
-                marginRight: 0,
-                padding: '0 0.2rem'
+                lineHeight: '1.22',
+                maxWidth: '96vw',
+                margin: '0 auto',
+                padding: '0 1.2rem'
               }}>
                 Sou médica, com pós-graduação em Medicina Interna, Psiquiatria e Psicofarmacologia.<br /><br />
                 Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
@@ -118,7 +145,7 @@ export default function Home() {
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
               </p>
               <h2 style={{
-                fontSize: '1.1rem'
+                fontSize: '1.2rem'
               }}>CRM 52.076388-8</h2>
               <img
                 src={simoneImg}
@@ -130,8 +157,10 @@ export default function Home() {
                       ? '#6c63ff'
                       : '#FFD700'
                   }`,
-                  maxWidth: '70vw',
-                  width: '70vw'
+                  maxWidth: '92vw',
+                  width: '92vw',
+                  margin: '2rem auto 0 auto',
+                  display: 'block'
                 }}
               />
             </div>
