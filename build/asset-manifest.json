@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.6ac5313d.css",
+    "main.js": "./static/js/main.edef9152.js",
+    "static/media/1452.jpg": "./static/media/1452.b1d82fb1b874a8b676e9.jpg",
+    "static/media/1668.jpg": "./static/media/1668.01a4aef098a6c66974dd.jpg",
+    "static/media/caduceus.png": "./static/media/caduceus.df9a24af7444b7cacfa4.png",
+    "static/media/simone.jpg": "./static/media/simone.2f32ba88397df143d702.jpg",
+    "index.html": "./index.html",
+    "main.6ac5313d.css.map": "./static/css/main.6ac5313d.css.map",
+    "main.edef9152.js.map": "./static/js/main.edef9152.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ac5313d.css",
+    "static/js/main.edef9152.js"
+  ]
+}
