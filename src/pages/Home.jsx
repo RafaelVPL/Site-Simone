@@ -106,11 +106,12 @@ export default function Home() {
               className="home-left caduceus-bg"
               ref={leftRef}
               style={{
-                width: '100vw',
-                maxWidth: '100vw',
+                width: '96vw',
+                maxWidth: '96vw',
                 minWidth: 0,
                 height: 'auto',
-                padding: '2.5rem 0.7rem 2.2rem 0.7rem',
+                minHeight: 'calc(100vh - 4rem)',
+                padding: '3.5rem 0.7rem 3.2rem 0.7rem',
                 margin: '0 auto',
                 boxSizing: 'border-box',
                 justifyContent: 'center',
@@ -121,18 +122,18 @@ export default function Home() {
             >
               <h1 style={{
                 fontFamily: 'Tangerine',
-                fontSize: '2.3rem'
+                fontSize: '2.5rem'
               }}>Dra. Simone L. S. Deo</h1>
               <h2 style={{
-                fontSize: '1.2rem',
-                marginBottom: '1rem'
+                fontSize: '1.3rem',
+                marginBottom: '1.2rem'
               }}>Psiquiatria</h2>
               <p style={{
                 fontWeight: 500,
-                fontSize: '1.08rem',
+                fontSize: '1.18rem',
                 color: '#232946',
-                lineHeight: '1.22',
-                maxWidth: '96vw',
+                lineHeight: '1.32',
+                maxWidth: '92vw',
                 margin: '0 auto',
                 padding: '0 1.2rem'
               }}>
@@ -145,7 +146,7 @@ export default function Home() {
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
               </p>
               <h2 style={{
-                fontSize: '1.2rem'
+                fontSize: '1.3rem'
               }}>CRM 52.076388-8</h2>
               <img
                 src={simoneImg}
@@ -157,10 +158,13 @@ export default function Home() {
                       ? '#6c63ff'
                       : '#FFD700'
                   }`,
-                  maxWidth: '92vw',
-                  width: '92vw',
+                  maxWidth: '88vw',
+                  width: '88vw',
+                  height: '48vh',
                   margin: '2rem auto 0 auto',
-                  display: 'block'
+                  display: 'block',
+                  objectFit: 'cover',
+                  borderRadius: '1.2rem'
                 }}
               />
             </div>
