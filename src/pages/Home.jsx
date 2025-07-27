@@ -314,7 +314,7 @@ export default function Home() {
       ) : (
         <>
           <div
-            className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'} mobile-layout`}
+            className="home-layout container py-5 mobile-layout"
             style={{
               width: '100vw',
               maxWidth: '100vw',
@@ -426,7 +426,6 @@ export default function Home() {
                 }}
               />
             </div>
-            {/* Mobile: Google Maps, Instagram, Facebook - vertically centered */}
             <div className="mobile-sections-centered">
               <div className="mobile-section-maps">
                 <div className="maps-bar-title" style={{
@@ -479,7 +478,6 @@ export default function Home() {
                       justifyContent: 'center'
                     }}
                   >
-                    {/* Fix: Use allowFullScreen and remove allowtransparency for Google Maps */}
                     <iframe
                       title="Localização da Clínica"
                       src={googleMapsEmbedUrl}
@@ -506,12 +504,11 @@ export default function Home() {
                 margin: '3vw auto 0 auto',
                 width: '92vw'
               }}>
-                {/* Fix: Use allowFullScreen and allow attributes for Instagram */}
                 <iframe
                   title="Instagram Post"
                   src={instagramEmbeds[currentInstagramEmbed]}
                   width="100%"
-                  height="600"
+                  height="220"
                   frameBorder="0"
                   scrolling="no"
                   allow="encrypted-media"
@@ -520,7 +517,7 @@ export default function Home() {
                     borderRadius: '1.2rem',
                     background: '#fff',
                     width: '92vw',
-                    height: '180vw',
+                    height: '44vw',
                     display: 'block',
                     margin: '0 auto',
                     border: 'none'
@@ -534,19 +531,18 @@ export default function Home() {
                 margin: '3vw auto 0 auto',
                 width: '92vw'
               }}>
-                {/* Fix: Use allowFullScreen and allow attributes for Facebook */}
                 <iframe
                   title="Facebook Post"
                   src={facebookEmbeds[currentFacebookEmbed]}
                   width="100%"
-                  height="600"
+                  height="220"
                   style={{
                     border: 'none',
                     overflow: 'hidden',
                     borderRadius: '1.2rem',
                     background: '#fff',
                     width: '92vw',
-                    height: '180vw',
+                    height: '44vw',
                     display: 'block',
                     margin: '0 auto'
                   }}

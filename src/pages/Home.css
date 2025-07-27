@@ -671,38 +671,23 @@ html.dark .site-bg-texture {
   .mobile-section-instagram iframe,
   .mobile-section-facebook iframe {
     width: 92vw !important;
-    height: 180vw !important;
+    height: 44vw !important;
     max-width: 92vw !important;
-    max-height: 180vw !important;
+    max-height: 44vw !important;
     border-radius: 1.2rem;
     display: block;
     margin: 0 auto;
     background: #fff;
     border: none;
   }
-
-  .home-right {
-    display: none !important;
-  }
-
-  /* Floating WhatsApp button bigger and more centered */
-  .floating-whatsapp-btn {
-    right: 5vw !important;
-    bottom: 5vw !important;
-    font-size: 2.2rem !important;
-    padding: 4vw 8vw 4vw 6vw !important;
-    border-radius: 8vw !important;
-    gap: 2vw !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  .floating-whatsapp-icon {
-    font-size: 3.5rem !important;
-    margin-right: 2vw !important;
-  }
-  .floating-whatsapp-text {
-    font-size: 2.2rem !important;
+  /* Remove pop-in/out effect for mobile */
+  .pop-in-main,
+  .pop-out-main,
+  .pop-in,
+  .pop-out {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -759,8 +744,8 @@ html.dark .site-bg-texture {
     background: #fff;
     border: 8px solid #FFD700;
     box-shadow:
-      0 4px 24px 0 rgba(255, 215, 0, 0.35),
-      0 2px 8px 0 rgba(40,60,120,0.18),
+      0 4px 32px 0 rgba(255, 215, 0, 0.45),
+      0 2px 12px 0 rgba(40,60,120,0.22),
       0 0 0 2px #fff inset;
     margin: 0 auto;
     padding: 0;
@@ -1033,9 +1018,9 @@ html.dark .site-bg-texture {
   .mobile-section-instagram iframe,
   .mobile-section-facebook iframe {
     width: 92vw !important;
-    height: 260vw !important;
+    height: 44vw !important;
     max-width: 92vw !important;
-    max-height: 260vw !important;
+    max-height: 44vw !important;
     border-radius: 1.2rem;
     display: block;
     margin: 0 auto;
