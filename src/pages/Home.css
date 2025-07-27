@@ -1132,3 +1132,23 @@ html.dark .site-bg-texture {
     margin-top: 5vw !important;
   }
 }
+
+/* MOBILE: push caduceus further down */
+@media (max-width: 900px) {
+  .home-left.caduceus-bg .caduceus-mobile-bg {
+    position: absolute;
+    left: 50%;
+    top: 82%; /* push caduceus further down */
+    transform: translate(-50%, -82%);
+    width: 68vw;
+    height: 68vw;
+    max-width: 340px;
+    max-height: 340px;
+    background: url('../assets/caduceus.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.32;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+  }
+}
