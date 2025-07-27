@@ -546,7 +546,8 @@ html.dark .site-bg-texture {
     background: url('../assets/caduceus.png') no-repeat center center;
     background-size: contain;
     opacity: 0.32;
-    margin: 2vw auto 2vw auto;
+    margin-top: 6vw;
+    margin-bottom: 2vw;
     display: block;
     pointer-events: none;
   }
@@ -670,9 +671,9 @@ html.dark .site-bg-texture {
   .mobile-section-instagram iframe,
   .mobile-section-facebook iframe {
     width: 92vw !important;
-    height: 120vw !important;
+    height: 140vw !important;
     max-width: 92vw !important;
-    max-height: 120vw !important;
+    max-height: 140vw !important;
     border-radius: 1.2rem;
     display: block;
     margin: 0 auto;
@@ -929,5 +930,30 @@ html.dark .site-bg-texture {
   .home-left.pc-left h2:last-child {
     font-size: 1.45rem;
     margin-top: 1.1rem;
+  }
+}
+
+/* PC layout: adjust sizes and push right side slightly left */
+@media (min-width: 901px) {
+  .home-right.pc-right {
+    margin-left: -3vw;
+  }
+  .home-photo {
+    max-width: 540px;
+    border-width: 8px;
+  }
+  .maps-bar-single-inner {
+    min-width: 440px;
+    min-height: 440px;
+    width: 480px;
+    height: 480px;
+  }
+  .home-right.pc-right .social-embed {
+    width: 390px;
+    height: 390px;
+    margin-bottom: 2.5rem;
+  }
+  .home-right.pc-right .social-embed:last-child {
+    margin-bottom: 0;
   }
 }
