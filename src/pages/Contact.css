@@ -144,3 +144,30 @@ html.dark .contact-email {
 .contact-emergency {
   color: #e11d48 !important;
 }
+
+/* Make contact page text bigger on mobile */
+@media (max-width: 900px) {
+  .contact-page,
+  .contact-page-centered {
+    font-size: 1.25rem;
+    padding: 2.5rem 0.7rem 2rem 0.7rem;
+  }
+  .contact-title {
+    font-size: 2.4rem;
+    margin-bottom: 2.2rem;
+  }
+  .contact-label {
+    font-size: 1.18rem;
+  }
+  .contact-value {
+    font-size: 1.25rem;
+  }
+  .contact-desc {
+    font-size: 1.08rem;
+  }
+  .contact-item,
+  .contact-item-centered {
+    font-size: 1.25rem;
+    gap: 1.1rem;
+  }
+}

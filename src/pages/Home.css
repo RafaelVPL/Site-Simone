@@ -1152,8 +1152,24 @@ html.dark .site-bg-texture {
     max-width: 220px;
     height: 54vw;
     max-height: 220px;
-    background: url('../assets/caduceus.png') no-repeat center center;
-    background-size: contain;
+    opacity: 0.32;
+    margin: 2vw auto 0 auto;
+    display: block;
+    pointer-events: none;
+  }
+}
+
+/* Remove background caduceus for mobile and style normal element after CRM */
+@media (max-width: 900px) {
+  .home-left.caduceus-bg::before,
+  .home-left.caduceus-bg .caduceus-mobile-bg {
+    display: none !important;
+  }
+  .caduceus-mobile-after-crm {
+    width: 54vw;
+    max-width: 220px;
+    height: 54vw;
+    max-height: 220px;
     opacity: 0.32;
     margin: 2vw auto 0 auto;
     display: block;

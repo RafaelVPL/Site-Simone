@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import simoneImg from '../assets/simone.jpg'
 import deomed1 from '../assets/deomed1.png'
 import deomed2 from '../assets/deomed2.png'
+import caduceusImg from '../assets/caduceus.png'
 import './Home.css'
 
 export default function Home() {
@@ -327,7 +328,7 @@ export default function Home() {
             }}
           >
             <div
-              className="home-left caduceus-bg"
+              className="home-left"
               ref={leftRef}
               style={{
                 width: '96vw',
@@ -405,7 +406,22 @@ export default function Home() {
                 fontWeight: 700,
                 marginTop: '2vw'
               }}>CRM 52.076388-8</h2>
-              <div className="caduceus-mobile-after-crm" />
+              {/* Completely redo mobile caduceus: normal element after CRM */}
+              <img
+                src={caduceusImg}
+                alt="Caduceus"
+                className="caduceus-mobile-after-crm"
+                style={{
+                  width: '54vw',
+                  maxWidth: '220px',
+                  height: '54vw',
+                  maxHeight: '220px',
+                  opacity: 0.32,
+                  margin: '2vw auto 0 auto',
+                  display: 'block',
+                  pointerEvents: 'none'
+                }}
+              />
               <img
                 src={simoneImg}
                 alt=""
