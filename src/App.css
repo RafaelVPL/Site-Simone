@@ -243,16 +243,15 @@ html.dark .bottom-gradient-effect {
 /* Responsive topbar for mobile */
 @media (max-width: 900px), (pointer: coarse) {
   .topbar {
-    min-height: 110px;
-    height: 110px;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    /* ...existing code... */
+    min-height: 110px !important;
+    height: 110px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    font-size: 1.3rem !important;
   }
   .topbar-title {
-    font-size: 1.65rem;
-    line-height: 1.22;
-    /* ...existing code... */
+    font-size: 1.65rem !important;
+    line-height: 1.22 !important;
   }
   .topbar-dropdown-btn {
     font-size: 1.3rem !important;

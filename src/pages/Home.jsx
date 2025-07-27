@@ -356,10 +356,9 @@ export default function Home() {
                 marginBottom: '2vw',
                 fontWeight: 700
               }}>Psiquiatria</h2>
-              {/* First portion of text - font size bigger */}
               <div className="first-text-bg" style={{
                 fontWeight: 700,
-                fontSize: '4.6vw', // updated to match request
+                fontSize: '4.6vw',
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
@@ -371,7 +370,6 @@ export default function Home() {
                 Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
                 Meu compromisso é oferecer um cuidado personalizado, respeitando as necessidades e objetivos de cada paciente.<br /><br />
               </div>
-              {/* Deomed image between text portions */}
               <img
                 src={deomed1}
                 alt="DeoMed"
@@ -385,7 +383,6 @@ export default function Home() {
                   boxShadow: '0 2px 18px rgba(40,60,120,0.14)'
                 }}
               />
-              {/* Second portion of text with caduceus background, pushed down */}
               <div className="second-text-bg" style={{
                 position: 'relative',
                 zIndex: 1,
@@ -394,12 +391,10 @@ export default function Home() {
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
-                margin: '5vw auto 0 auto', // updated for spacing
+                margin: '5vw auto 0 auto',
                 padding: '0 2vw',
                 textAlign: 'center'
               }}>
-                {/* Caduceus absolutely behind this block */}
-                <div className="caduceus-mobile-bg" />
                 Mais do que tratar a mente, meu propósito é cuidar das pessoas - escutando, orientando e criando um plano de tratamento individualizado que faça sentido para sua rotina e seu momento de vida.<br /><br />
                 A saúde mental é um reflexo do que cultivamos dentro e fora. Assim sendo, não é alcançada somente através de remédios.<br /><br />
                 A estabilidade começa com um firme propósito da pessoa tomar as rédeas da própria vida, e eu me proponho a ser acessível, e a caminharmos juntos rumo aos seus objetivos.<br /><br />
@@ -410,6 +405,7 @@ export default function Home() {
                 fontWeight: 700,
                 marginTop: '2vw'
               }}>CRM 52.076388-8</h2>
+              <div className="caduceus-mobile-after-crm" />
               <img
                 src={simoneImg}
                 alt=""
@@ -483,6 +479,7 @@ export default function Home() {
                       justifyContent: 'center'
                     }}
                   >
+                    {/* Fix: Use allowFullScreen and remove allowtransparency for Google Maps */}
                     <iframe
                       title="Localização da Clínica"
                       src={googleMapsEmbedUrl}
@@ -495,7 +492,7 @@ export default function Home() {
                         display: 'block',
                         borderRadius: '1.2rem'
                       }}
-                      allowFullScreen=""
+                      allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
@@ -509,21 +506,24 @@ export default function Home() {
                 margin: '3vw auto 0 auto',
                 width: '92vw'
               }}>
+                {/* Fix: Use allowFullScreen and allow attributes for Instagram */}
                 <iframe
                   title="Instagram Post"
                   src={instagramEmbeds[currentInstagramEmbed]}
-                  width="92vw"
-                  height="260vw"
+                  width="100%"
+                  height="600"
                   frameBorder="0"
                   scrolling="no"
-                  allowtransparency="true"
                   allow="encrypted-media"
+                  allowFullScreen
                   style={{
                     borderRadius: '1.2rem',
                     background: '#fff',
-                    width: '100%',
-                    height: '100%',
-                    display: 'block'
+                    width: '92vw',
+                    height: '180vw',
+                    display: 'block',
+                    margin: '0 auto',
+                    border: 'none'
                   }}
                 ></iframe>
               </div>
@@ -534,23 +534,25 @@ export default function Home() {
                 margin: '3vw auto 0 auto',
                 width: '92vw'
               }}>
+                {/* Fix: Use allowFullScreen and allow attributes for Facebook */}
                 <iframe
                   title="Facebook Post"
                   src={facebookEmbeds[currentFacebookEmbed]}
-                  width="92vw"
-                  height="260vw"
+                  width="100%"
+                  height="600"
                   style={{
                     border: 'none',
                     overflow: 'hidden',
                     borderRadius: '1.2rem',
                     background: '#fff',
-                    width: '100%',
-                    height: '100%',
-                    display: 'block'
+                    width: '92vw',
+                    height: '180vw',
+                    display: 'block',
+                    margin: '0 auto'
                   }}
                   scrolling="no"
                   frameBorder="0"
-                  allowFullScreen={true}
+                  allowFullScreen
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 ></iframe>
               </div>
