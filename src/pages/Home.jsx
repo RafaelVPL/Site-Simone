@@ -167,18 +167,24 @@ export default function Home() {
                 textAlign: 'center'
               }}>CRM 52.076388-8</h2>
             </div>
-            <div className="home-right pc-right">
+            <div className="home-right pc-right" style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              marginLeft: '-3vw'
+            }}>
               <img
                 src={simoneImg}
                 alt=""
                 className="home-photo"
                 style={{
-                  border: `12px solid ${
+                  border: `8px solid ${
                     typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
                       ? '#6c63ff'
                       : '#FFD700'
                   }`,
-                  maxWidth: '700px',
+                  maxWidth: '420px', // smaller than before
                   width: '100%',
                   display: 'block',
                   margin: '0 auto'
@@ -212,7 +218,7 @@ export default function Home() {
               <div className="maps-bar-single-inner" style={{
                 minWidth: '440px',
                 minHeight: '440px',
-                width: '480px', // reverted to previous size
+                width: '480px',
                 height: '480px',
                 borderRadius: '1.2rem',
                 overflow: 'hidden',
@@ -246,24 +252,62 @@ export default function Home() {
               alignItems: 'center',
               justifyContent: 'center',
               flexDirection: 'column',
-              marginLeft: '-3vw' // slightly left
+              marginLeft: '-3vw'
             }}>
-              <img
-                src={simoneImg}
-                alt=""
-                className="home-photo"
-                style={{
-                  border: `8px solid ${
-                    typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
-                      ? '#6c63ff'
-                      : '#FFD700'
-                  }`,
-                  maxWidth: '540px', // reverted to previous size
-                  width: '100%',
-                  display: 'block',
-                  margin: '0 auto'
-                }}
-              />
+              <div className="social-embed" style={{
+                width: '390px',
+                height: '390px',
+                marginBottom: '2.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <iframe
+                  title="Instagram Post"
+                  src={instagramEmbeds[currentInstagramEmbed]}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  scrolling="no"
+                  allowtransparency="true"
+                  allow="encrypted-media"
+                  style={{
+                    borderRadius: '1.2rem',
+                    background: '#fff',
+                    width: '100%',
+                    height: '100%',
+                    display: 'block'
+                  }}
+                ></iframe>
+              </div>
+              <div className="social-embed" style={{
+                width: '390px',
+                height: '390px',
+                marginBottom: '0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <iframe
+                  title="Facebook Post"
+                  src={facebookEmbeds[currentFacebookEmbed]}
+                  width="100%"
+                  height="100%"
+                  style={{
+                    border: 'none',
+                    overflow: 'hidden',
+                    borderRadius: '1.2rem',
+                    background: '#fff',
+                    width: '100%',
+                    height: '100%',
+                    display: 'block'
+                  }}
+                  scrolling="no"
+                  frameBorder="0"
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                ></iframe>
+              </div>
             </div>
           </div>
         </>
