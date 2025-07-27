@@ -359,7 +359,7 @@ export default function Home() {
               {/* First portion of text - font size bigger */}
               <div className="first-text-bg" style={{
                 fontWeight: 700,
-                fontSize: '4.6vw',
+                fontSize: '4.6vw', // updated to match request
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
@@ -394,7 +394,7 @@ export default function Home() {
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
-                margin: '5vw auto 0 auto',
+                margin: '5vw auto 0 auto', // updated for spacing
                 padding: '0 2vw',
                 textAlign: 'center'
               }}>

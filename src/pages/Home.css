@@ -1097,20 +1097,6 @@ html.dark .site-bg-texture {
   }
 }
 
-/* MOBILE: adjust first and second text portions font/spacing */
-@media (max-width: 900px) {
-  .home-left.caduceus-bg .first-text-bg {
-    font-size: 4.6vw !important;
-  }
-  .home-left.caduceus-bg .second-text-bg {
-    margin-top: 5vw !important;
-  }
-  .home-left.caduceus-bg .caduceus-mobile-bg {
-    top: 75%; /* move caduceus way down, ~25% from top */
-    transform: translate(-50%, -75%);
-  }
-}
-
 /* Make dropdown and buttons bigger on mobile */
 @media (max-width: 900px), (pointer: coarse) {
   .topbar-dropdown-btn {
@@ -1134,5 +1120,15 @@ html.dark .site-bg-texture {
     padding: 1.1rem 2rem !important;
     border-radius: 1.1rem !important;
     margin-top: 1.2rem !important;
+  }
+}
+
+/* MOBILE: adjust first and second text portions font/spacing */
+@media (max-width: 900px) {
+  .home-left.caduceus-bg .first-text-bg {
+    font-size: 4.6vw !important;
+  }
+  .home-left.caduceus-bg .second-text-bg {
+    margin-top: 5vw !important;
   }
 }
