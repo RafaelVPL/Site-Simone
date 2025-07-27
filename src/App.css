@@ -490,4 +490,18 @@ html.dark .bottom-gradient-effect {
   }
 }
 
+/* Make topbar even bigger vertically and title larger on mobile */
+@media (max-width: 900px), (pointer: coarse) {
+  .topbar {
+    min-height: 92px;
+    height: 92px;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+  .topbar-title {
+    font-size: 1.65rem;
+    line-height: 1.22;
+  }
+}
+
 /* ...existing code... */

@@ -356,10 +356,10 @@ export default function Home() {
                 marginBottom: '2vw',
                 fontWeight: 700
               }}>Psiquiatria</h2>
-              {/* First portion of text - font size matches second portion */}
-              <div style={{
+              {/* First portion of text - font size bigger */}
+              <div className="first-text-bg" style={{
                 fontWeight: 700,
-                fontSize: '4vw', // match second portion
+                fontSize: '4.6vw',
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
@@ -385,7 +385,7 @@ export default function Home() {
                   boxShadow: '0 2px 18px rgba(40,60,120,0.14)'
                 }}
               />
-              {/* Second portion of text with caduceus background */}
+              {/* Second portion of text with caduceus background, pushed down */}
               <div className="second-text-bg" style={{
                 position: 'relative',
                 zIndex: 1,
@@ -394,7 +394,7 @@ export default function Home() {
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
-                margin: '0 auto',
+                margin: '5vw auto 0 auto',
                 padding: '0 2vw',
                 textAlign: 'center'
               }}>

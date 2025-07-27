@@ -1076,7 +1076,7 @@ html.dark .site-bg-texture {
     position: absolute;
     left: 50%;
     top: 75%; /* move caduceus way down, ~25% from top */
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -75%);
     width: 68vw;
     height: 68vw;
     max-width: 340px;
@@ -1094,6 +1094,20 @@ html.dark .site-bg-texture {
     display: none !important;
     content: none !important;
     background: none !important;
+  }
+}
+
+/* MOBILE: adjust first and second text portions font/spacing */
+@media (max-width: 900px) {
+  .home-left.caduceus-bg .first-text-bg {
+    font-size: 4.6vw !important;
+  }
+  .home-left.caduceus-bg .second-text-bg {
+    margin-top: 5vw !important;
+  }
+  .home-left.caduceus-bg .caduceus-mobile-bg {
+    top: 75%; /* move caduceus way down, ~25% from top */
+    transform: translate(-50%, -75%);
   }
 }
 
