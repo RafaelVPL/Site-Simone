@@ -527,29 +527,43 @@ html.dark .site-bg-texture {
     padding: 6% 2% 2% 2%;
     min-height: 80vh;
     text-align: center;
+    position: relative;
   }
 
   .home-left h1 {
-    font-size: 7.5vw;
+    font-size: 10vw;
     font-weight: 700;
-    margin-bottom: 2.5vw;
+    margin-bottom: 2vw;
     text-align: center;
   }
 
+  .mobile-caduceus-img {
+    width: 60vw;
+    height: 60vw;
+    max-width: 320px;
+    max-height: 320px;
+    background: url('../assets/caduceus.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.32;
+    margin: 2vw auto 2vw auto;
+    display: block;
+    pointer-events: none;
+  }
+
   .home-left h2 {
-    font-size: 4.5vw;
+    font-size: 4vw;
     font-weight: 700;
     margin-bottom: 2vw;
     text-align: center;
   }
 
   .home-left p {
-    font-size: 4.8vw;
+    font-size: 4vw;
     font-weight: 700;
-    line-height: 1.38;
+    line-height: 1.13;
     max-width: 92vw;
     margin: 0 auto;
-    padding: 0 4vw;
+    padding: 0 2vw;
     text-align: center;
   }
 
@@ -572,7 +586,7 @@ html.dark .site-bg-texture {
   }
 
   .maps-bar-title {
-    font-size: 3.5vw;
+    font-size: 3vw;
     margin-bottom: 1vw;
     padding: 0;
     text-align: center;
@@ -581,7 +595,7 @@ html.dark .site-bg-texture {
   .maps-address,
   .maps-address-light,
   .maps-address-dark {
-    font-size: 2.8vw;
+    font-size: 2vw;
     margin-top: 0.5vw;
     padding: 0;
     text-align: center;
@@ -622,33 +636,51 @@ html.dark .site-bg-texture {
     display: block;
   }
 
-  .home-right {
+  .mobile-sections-centered {
     width: 100vw;
-    max-width: 100vw;
-    padding: 0;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
   }
-
-  .home-right > div {
-    width: 90vw !important;
-    height: 220px !important;
-    margin-bottom: 2vw;
+  .mobile-section-maps,
+  .mobile-section-instagram,
+  .mobile-section-facebook {
+    width: 100vw;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-section-maps > .maps-bar-title,
+  .mobile-section-maps > .maps-bar-single-inner,
+  .mobile-section-instagram,
+  .mobile-section-facebook {
+    margin: 0 auto;
+    padding: 0;
     align-items: center;
     justify-content: center;
   }
-
-  .home-right iframe {
-    width: 100% !important;
-    height: 100% !important;
+  .mobile-section-instagram iframe,
+  .mobile-section-facebook iframe {
+    width: 92vw !important;
+    height: 92vw !important;
+    max-width: 92vw !important;
+    max-height: 92vw !important;
     border-radius: 1.2rem;
+    display: block;
+    margin: 0 auto;
     background: #fff;
     border: none;
-    display: block;
+  }
+
+  .home-right {
+    display: none !important;
   }
 
   /* Floating WhatsApp button bigger and more centered */
@@ -669,5 +701,36 @@ html.dark .site-bg-texture {
   }
   .floating-whatsapp-text {
     font-size: 2.2rem !important;
+  }
+}
+
+/* PC: reduce font size and line spacing for text */
+@media (min-width: 901px) {
+  .home-left h1 {
+    font-size: 3.1rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    text-align: center;
+  }
+  .home-left h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    text-align: center;
+  }
+  .home-left p {
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.08;
+    max-width: 700px;
+    margin-left: -1.2rem;
+    margin-right: -1.2rem;
+    text-align: center;
+  }
+  .home-left h2:last-child {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0.7rem;
+    text-align: center;
   }
 }
