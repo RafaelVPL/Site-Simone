@@ -126,27 +126,28 @@ export default function Home() {
         <>
           {/* Section 1: text left, photo right */}
           <div className="home-layout pc-section">
-            <div className="home-left pc-left">
+            <div className="home-left pc-left caduceus-bg">
+              {/* Caduceus is handled by CSS ::before */}
               <h1 style={{
                 fontFamily: 'Tangerine',
-                fontSize: '3.1rem',
+                fontSize: '4rem', // slightly bigger
                 fontWeight: 700,
                 letterSpacing: '0.08em',
                 marginBottom: '0.7rem',
                 textAlign: 'center'
               }}>Dra. Simone L. S. Deo</h1>
               <h2 style={{
-                fontSize: '1.25rem',
-                marginBottom: '0.7rem',
+                fontSize: '1.45rem', // slightly smaller
+                marginBottom: '1.1rem',
                 fontWeight: 700,
                 textAlign: 'center'
               }}>Psiquiatria</h2>
               <p style={{
                 fontWeight: 700,
-                fontSize: '1.08rem',
+                fontSize: '1.08rem', // slightly smaller
                 color: '#232946',
-                lineHeight: '1.08',
-                maxWidth: '700px',
+                lineHeight: '1.13',
+                maxWidth: '900px',
                 marginLeft: '-1.2rem',
                 marginRight: '-1.2rem',
                 textAlign: 'center'
@@ -160,9 +161,9 @@ export default function Home() {
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
               </p>
               <h2 style={{
-                fontSize: '1.25rem',
+                fontSize: '1.45rem',
                 fontWeight: 700,
-                marginTop: '0.7rem',
+                marginTop: '1.1rem',
                 textAlign: 'center'
               }}>CRM 52.076388-8</h2>
             </div>
@@ -172,12 +173,12 @@ export default function Home() {
                 alt=""
                 className="home-photo"
                 style={{
-                  border: `8px solid ${
+                  border: `12px solid ${
                     typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
                       ? '#6c63ff'
                       : '#FFD700'
                   }`,
-                  maxWidth: '540px',
+                  maxWidth: '700px',
                   width: '100%',
                   display: 'block',
                   margin: '0 auto'
@@ -191,16 +192,16 @@ export default function Home() {
               <div className="maps-bar-title" style={{
                 textAlign: 'center',
                 width: '100%',
-                fontSize: '1.15rem',
-                marginBottom: '0.7rem',
+                fontSize: '1.35rem',
+                marginBottom: '1.2rem',
                 padding: 0
               }}>
                 <span style={{ color: '#181818' }}>Endereço para as consultas:</span>
                 <div
                   className={typeof window !== "undefined" && window.document.documentElement.classList.contains('dark') ? "maps-address-dark" : "maps-address-light"}
                   style={{
-                    fontSize: '1rem',
-                    marginTop: '0.3rem',
+                    fontSize: '1.18rem',
+                    marginTop: '0.5rem',
                     padding: 0,
                     textAlign: 'center'
                   }}
@@ -209,10 +210,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="maps-bar-single-inner" style={{
-                minWidth: '440px',
-                minHeight: '440px',
-                width: '480px',
-                height: '480px',
+                minWidth: '540px',
+                minHeight: '540px',
+                width: '600px',
+                height: '600px',
                 borderRadius: '1.2rem',
                 overflow: 'hidden',
                 boxShadow: '0 2px 18px rgba(40,60,120,0.14)',
@@ -240,13 +241,25 @@ export default function Home() {
                 ></iframe>
               </div>
             </div>
-            <div className="home-right pc-right">
-              <div className="social-embed">
+            <div className="home-right pc-right" style={{
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              display: 'flex'
+            }}>
+              <div className="social-embed" style={{
+                width: '520px',
+                height: '520px',
+                marginBottom: '2.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
                 <iframe
                   title="Instagram Post"
                   src={instagramEmbeds[currentInstagramEmbed]}
-                  width="390"
-                  height="390"
+                  width="100%"
+                  height="100%"
                   frameBorder="0"
                   scrolling="no"
                   allowtransparency="true"
@@ -260,12 +273,19 @@ export default function Home() {
                   }}
                 ></iframe>
               </div>
-              <div className="social-embed">
+              <div className="social-embed" style={{
+                width: '520px',
+                height: '520px',
+                marginBottom: '0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
                 <iframe
                   title="Facebook Post"
                   src={facebookEmbeds[currentFacebookEmbed]}
-                  width="390"
-                  height="390"
+                  width="100%"
+                  height="100%"
                   style={{
                     border: 'none',
                     overflow: 'hidden',
