@@ -4,6 +4,7 @@ import './Home.css'
 
 export default function Home() {
   const whatsappNumber = '5524981548739';
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
   const email = 'simonedeomed@gmail.com';
 
   // Pop-in/out effect for left, right, contact, and maps sections
@@ -87,6 +88,17 @@ export default function Home() {
 
   return (
     <>
+      {/* Floating WhatsApp button */}
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-whatsapp-btn"
+        aria-label="Abrir WhatsApp"
+      >
+        <span className="floating-whatsapp-icon">💬</span>
+        <span className="floating-whatsapp-text">WhatsApp</span>
+      </a>
       <div
         className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}${isMobile ? ' mobile-layout' : ''}`}
         style={isMobile ? {
@@ -111,7 +123,7 @@ export default function Home() {
                 minWidth: 0,
                 height: 'auto',
                 minHeight: 'calc(100vh - 4rem)',
-                padding: '3.5rem 0.7rem 3.2rem 0.7rem',
+                padding: '2.2rem 0.7rem 2.2rem 0.7rem',
                 margin: '0 auto',
                 boxSizing: 'border-box',
                 justifyContent: 'center',
@@ -122,17 +134,20 @@ export default function Home() {
             >
               <h1 style={{
                 fontFamily: 'Tangerine',
-                fontSize: '2.5rem'
+                fontSize: '2.7rem',
+                fontWeight: 700,
+                letterSpacing: '0.08em'
               }}>Dra. Simone L. S. Deo</h1>
               <h2 style={{
-                fontSize: '1.3rem',
-                marginBottom: '1.2rem'
+                fontSize: '1.45rem',
+                marginBottom: '1.2rem',
+                fontWeight: 700
               }}>Psiquiatria</h2>
               <p style={{
-                fontWeight: 500,
-                fontSize: '1.18rem',
+                fontWeight: 700,
+                fontSize: '1.22rem',
                 color: '#232946',
-                lineHeight: '1.32',
+                lineHeight: '1.38',
                 maxWidth: '92vw',
                 margin: '0 auto',
                 padding: '0 1.2rem'
@@ -146,7 +161,8 @@ export default function Home() {
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
               </p>
               <h2 style={{
-                fontSize: '1.3rem'
+                fontSize: '1.45rem',
+                fontWeight: 700
               }}>CRM 52.076388-8</h2>
               <img
                 src={simoneImg}
@@ -172,21 +188,23 @@ export default function Home() {
         ) : (
           <>
             <div className="home-left caduceus-bg" ref={leftRef}>
-              {/* ...existing code for desktop left... */}
               <h1 style={{
                 fontFamily: 'Tangerine',
-                fontSize: '4rem'
+                fontSize: '4.2rem',
+                fontWeight: 700,
+                letterSpacing: '0.08em'
               }}>Dra. Simone L. S. Deo</h1>
               <h2 style={{
-                fontSize: '1.3rem',
-                marginBottom: '1.2rem'
+                fontSize: '1.55rem',
+                marginBottom: '1.2rem',
+                fontWeight: 700
               }}>Psiquiatria</h2>
               <p style={{
-                fontWeight: 600,
-                fontSize: '1.15rem',
+                fontWeight: 700,
+                fontSize: '1.28rem',
                 color: '#232946',
-                lineHeight: '1.22',
-                maxWidth: '680px',
+                lineHeight: '1.32',
+                maxWidth: '700px',
                 marginLeft: '-1.2rem',
                 marginRight: '-1.2rem'
               }}>
@@ -199,7 +217,8 @@ export default function Home() {
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
               </p>
               <h2 style={{
-                fontSize: '1.3rem'
+                fontSize: '1.55rem',
+                fontWeight: 700
               }}>CRM 52.076388-8</h2>
             </div>
             <div className="home-right" ref={rightRef}>
@@ -225,29 +244,14 @@ export default function Home() {
         className={`contact-section contact-section-centered ${visible[2] ? 'pop-in' : 'pop-out'}`}
         ref={contactRef}
         style={{
-          marginTop: isMobile ? '0.5rem' : '0.5rem',
-          marginBottom: isMobile ? '1.2rem' : '1.2rem',
-          gap: isMobile ? '1rem' : '1.2rem',
+          marginTop: isMobile ? '0.2rem' : '0.5rem',
+          marginBottom: isMobile ? '0.7rem' : '1.2rem',
+          gap: isMobile ? '0.5rem' : '1.2rem',
           padding: isMobile ? '0 0.5rem' : undefined
         }}
       >
-        <div className="contact-buttons" style={{ gap: isMobile ? '0.7rem' : '1.2rem', padding: isMobile ? '0 0.2rem' : undefined }}>
-          <a
-            href={`https://wa.me/${whatsappNumber}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-btn main-contact"
-            title="Contato via WhatsApp"
-            style={{
-              fontSize: isMobile ? '0.95rem' : '1.25rem',
-              padding: isMobile ? '0.7rem 0.8rem' : '1.3rem 2.6rem',
-              borderRadius: '0.7rem'
-            }}
-          >
-            Contato via WhatsApp
-          </a>
-        </div>
-        <div className="contact-email">
+        {/* WhatsApp button removed */}
+        <div className="contact-email" style={{ fontWeight: 700, fontSize: isMobile ? '1.08rem' : '1.18rem' }}>
           <span style={{ color: '#181818' }}>Email: </span>
           <a
             href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
@@ -256,8 +260,9 @@ export default function Home() {
                 typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
                   ? '#14316c'
                   : '#ff5c8a',
-              fontWeight: 500,
-              transition: 'color 0.13s cubic-bezier(.23,1.01,.32,1)'
+              fontWeight: 700,
+              transition: 'color 0.13s cubic-bezier(.23,1.01,.32,1)',
+              fontSize: isMobile ? '1.08rem' : '1.18rem'
             }}
             target="_blank"
             rel="noopener noreferrer"
@@ -266,13 +271,21 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className={`home-layout container py-5 ${visible[3] ? 'pop-in-main' : 'pop-out-main'}`}>
-        <div className="home-left" ref={mapsRef}>
+      <div
+        className={`home-layout container py-5 ${visible[3] ? 'pop-in-main' : 'pop-out-main'}`}
+        style={isMobile ? {
+          marginTop: '0.2rem',
+          marginBottom: '0.2rem',
+          gap: 0,
+          padding: 0
+        } : { marginTop: '1.2rem', marginBottom: '1.2rem' }}
+      >
+        <div className="home-left" ref={mapsRef} style={isMobile ? { padding: '0.2rem 0.2rem' } : {}}>
           <div className="maps-bar-title" style={{
             textAlign: 'center',
             width: '100%',
             fontSize: isMobile ? '0.92rem' : undefined,
-            marginBottom: isMobile ? '0.5rem' : undefined,
+            marginBottom: isMobile ? '0.3rem' : undefined,
             padding: isMobile ? '0 0.1rem' : undefined
           }}>
             <span style={{ color: '#181818' }}>Endereço para as consultas:</span>
@@ -281,39 +294,47 @@ export default function Home() {
               style={{
                 fontSize: isMobile ? '0.85rem' : undefined,
                 padding: isMobile ? '0 0.1rem' : undefined,
-                marginTop: isMobile ? '0.1rem' : undefined
+                marginTop: isMobile ? '0.08rem' : undefined
               }}
             >
               {clinicAddress}
             </div>
           </div>
-          <div className="maps-bar-single-inner" style={{
-            justifyContent: 'center',
-            minWidth: isMobile ? 0 : '540px',
-            minHeight: isMobile ? 0 : '440px',
-            width: isMobile ? '92vw' : '800px',
-            height: isMobile ? '210px' : '640px',
-            padding: 0,
-            margin: '0 auto',
-            alignItems: 'center'
-          }}>
-            <div style={{
-              width: isMobile ? '92vw' : '800px',
-              height: isMobile ? '210px' : '640px',
-              borderRadius: '1.2rem',
-              overflow: 'hidden',
-              boxShadow: '0 2px 18px rgba(40,60,120,0.14)',
-              background: '#fff',
-              margin: '0 auto',
+          <div
+            className="maps-bar-single-inner"
+            style={{
               display: 'flex',
+              justifyContent: 'center',
               alignItems: 'center',
-              justifyContent: 'center'
-            }}>
+              margin: '0 auto',
+              padding: 0,
+              width: isMobile ? '100vw' : '100%',
+              height: isMobile ? 'auto' : '100%',
+            }}
+          >
+            <div
+              style={{
+                width: isMobile ? '92vw' : '480px',
+                height: isMobile ? '92vw' : '480px',
+                maxWidth: '480px',
+                maxHeight: '480px',
+                minWidth: '220px',
+                minHeight: '220px',
+                borderRadius: '1.2rem',
+                overflow: 'hidden',
+                boxShadow: '0 2px 18px rgba(40,60,120,0.14)',
+                background: '#fff',
+                margin: '0 auto',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
               <iframe
                 title="Localização da Clínica"
                 src={googleMapsEmbedUrl}
-                width={isMobile ? '92vw' : '800'}
-                height={isMobile ? '210' : '640'}
+                width="100%"
+                height="100%"
                 style={{
                   border: 0,
                   width: '100%',
