@@ -54,22 +54,20 @@ function App() {
         <div style={{ position: 'relative', minHeight: '100vh' }}>
           <div className="topbar">
             <span className="topbar-title">Bem vindo!</span>
-            <nav className="topbar-links">
-              <Link to="/" className="topbar-link">Início</Link>
-              <Link to="/contact" className="topbar-link">Contatos</Link>
-            </nav>
+            {/* Always hide links and mode button on mobile */}
+            <nav className="topbar-links" style={{ display: 'none' }} />
             <button
               className="topbar-mode-btn"
-              onClick={handleToggleMode}
+              style={{ display: 'none' }}
               aria-label="Alternar modo claro/escuro"
             >
               <span className="topbar-mode-icon">{darkMode ? '🌙' : '☀️'}</span>
             </button>
-            {/* Mobile dropdown menu */}
+            {/* Always show mobile dropdown menu */}
             <div
               className={`topbar-dropdown${dropdownOpen ? ' open' : ''}`}
               ref={dropdownRef}
-              style={{ display: window.innerWidth <= 900 ? 'inline-block' : 'none' }}
+              style={{ display: 'inline-block' }}
             >
               <button
                 className="topbar-dropdown-btn"

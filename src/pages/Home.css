@@ -958,7 +958,7 @@ html.dark .site-bg-texture {
   }
 }
 
-/* Mobile layout: move caduceus down, make it slightly bigger, make social embeds taller */
+/* Mobile layout: move caduceus much further down, make social embeds much taller */
 @media (max-width: 900px) {
   .mobile-caduceus-img {
     width: 68vw;
@@ -968,7 +968,7 @@ html.dark .site-bg-texture {
     background: url('../assets/caduceus.png') no-repeat center center;
     background-size: contain;
     opacity: 0.32;
-    margin-top: 12vw;
+    margin-top: 32vw; /* moved much further down */
     margin-bottom: 2vw;
     display: block;
     pointer-events: none;
@@ -976,9 +976,9 @@ html.dark .site-bg-texture {
   .mobile-section-instagram iframe,
   .mobile-section-facebook iframe {
     width: 92vw !important;
-    height: 180vw !important;
+    height: 260vw !important; /* much taller */
     max-width: 92vw !important;
-    max-height: 180vw !important;
+    max-height: 260vw !important;
     border-radius: 1.2rem;
     display: block;
     margin: 0 auto;
