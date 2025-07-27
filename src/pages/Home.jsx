@@ -351,51 +351,60 @@ export default function Home() {
                 letterSpacing: '0.08em',
                 marginBottom: '2vw'
               }}>Dra. Simone L. S. Deo</h1>
-              {/* Move caduceus down for mobile */}
               <h2 style={{
                 fontSize: '4vw',
                 marginBottom: '2vw',
                 fontWeight: 700
               }}>Psiquiatria</h2>
-              <p style={{
+              {/* First portion of text */}
+              <div style={{
                 fontWeight: 700,
                 fontSize: '4vw',
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
                 margin: '0 auto',
-                padding: '0 2vw'
+                padding: '0 2vw',
+                textAlign: 'center'
               }}>
                 Sou médica, com pós-graduação em Medicina Interna, Psiquiatria e Psicofarmacologia.<br /><br />
                 Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
                 Meu compromisso é oferecer um cuidado personalizado, respeitando as necessidades e objetivos de cada paciente.<br /><br />
-                {/* Insert photo between text */}
-                <img
-                  src={deomed1}
-                  alt="DeoMed"
-                  style={{
-                    width: '60vw',
-                    maxWidth: '320px',
-                    height: 'auto',
-                    margin: '2vw auto 2vw auto',
-                    display: 'block',
-                    borderRadius: '1.2rem',
-                    boxShadow: '0 2px 18px rgba(40,60,120,0.14)'
-                  }}
-                />
-                {/* Caduceus image moved further down, much bigger vertical margin */}
-                <div
-                  className="mobile-caduceus-img"
-                  style={{
-                    marginTop: '32vw',
-                    marginBottom: '2vw'
-                  }}
-                />
+              </div>
+              {/* Deomed image between text portions */}
+              <img
+                src={deomed1}
+                alt="DeoMed"
+                style={{
+                  width: '60vw',
+                  maxWidth: '320px',
+                  height: 'auto',
+                  margin: '2vw auto 2vw auto',
+                  display: 'block',
+                  borderRadius: '1.2rem',
+                  boxShadow: '0 2px 18px rgba(40,60,120,0.14)'
+                }}
+              />
+              {/* Second portion of text with caduceus background */}
+              <div className="second-text-bg" style={{
+                position: 'relative',
+                zIndex: 1,
+                fontWeight: 700,
+                fontSize: '4vw',
+                color: '#232946',
+                lineHeight: '1.13',
+                maxWidth: '92vw',
+                margin: '0 auto',
+                padding: '0 2vw',
+                textAlign: 'center'
+              }}>
+                {/* Caduceus absolutely behind this block */}
+                <div className="caduceus-mobile-bg" />
                 Mais do que tratar a mente, meu propósito é cuidar das pessoas - escutando, orientando e criando um plano de tratamento individualizado que faça sentido para sua rotina e seu momento de vida.<br /><br />
                 A saúde mental é um reflexo do que cultivamos dentro e fora. Assim sendo, não é alcançada somente através de remédios.<br /><br />
                 A estabilidade começa com um firme propósito da pessoa tomar as rédeas da própria vida, e eu me proponho a ser acessível, e a caminharmos juntos rumo aos seus objetivos.<br /><br />
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
-              </p>
+              </div>
               <h2 style={{
                 fontSize: '4vw',
                 fontWeight: 700,
