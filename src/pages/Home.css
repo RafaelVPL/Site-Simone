@@ -500,3 +500,174 @@ html.dark .site-bg-texture {
     height: 50px;
   }
 }
+
+/* Mobile layout improvements */
+@media (max-width: 900px) {
+  .home-layout,
+  .home-left,
+  .home-right,
+  .contact-section-centered,
+  .maps-bar-single-inner,
+  .maps-bar-title,
+  .maps-address,
+  .maps-address-light,
+  .maps-address-dark {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-left.caduceus-bg {
+    padding: 6% 2% 2% 2%;
+    min-height: 80vh;
+    text-align: center;
+  }
+
+  .home-left h1 {
+    font-size: 7.5vw;
+    font-weight: 700;
+    margin-bottom: 2.5vw;
+    text-align: center;
+  }
+
+  .home-left h2 {
+    font-size: 4.5vw;
+    font-weight: 700;
+    margin-bottom: 2vw;
+    text-align: center;
+  }
+
+  .home-left p {
+    font-size: 4.8vw;
+    font-weight: 700;
+    line-height: 1.38;
+    max-width: 92vw;
+    margin: 0 auto;
+    padding: 0 4vw;
+    text-align: center;
+  }
+
+  .home-left img.home-photo {
+    max-width: 88vw;
+    width: 88vw;
+    height: 48vw;
+    margin: 4vw auto 0 auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 1.2rem;
+    border-width: 5px;
+  }
+
+  .contact-section-centered {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    gap: 1vw;
+    padding: 0;
+  }
+
+  .maps-bar-title {
+    font-size: 3.5vw;
+    margin-bottom: 1vw;
+    padding: 0;
+    text-align: center;
+  }
+
+  .maps-address,
+  .maps-address-light,
+  .maps-address-dark {
+    font-size: 2.8vw;
+    margin-top: 0.5vw;
+    padding: 0;
+    text-align: center;
+  }
+
+  .maps-bar-single-inner {
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maps-bar-single-inner > div {
+    width: 92vw !important;
+    height: 92vw !important;
+    max-width: 92vw !important;
+    max-height: 92vw !important;
+    min-width: 220px;
+    min-height: 220px;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 2px 18px rgba(40,60,120,0.14);
+    background: #fff;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maps-bar-single-inner iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 1.2rem;
+    border: none;
+    display: block;
+  }
+
+  .home-right {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-right > div {
+    width: 90vw !important;
+    height: 220px !important;
+    margin-bottom: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-right iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 1.2rem;
+    background: #fff;
+    border: none;
+    display: block;
+  }
+
+  /* Floating WhatsApp button bigger and more centered */
+  .floating-whatsapp-btn {
+    right: 5vw !important;
+    bottom: 5vw !important;
+    font-size: 2.2rem !important;
+    padding: 4vw 8vw 4vw 6vw !important;
+    border-radius: 8vw !important;
+    gap: 2vw !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .floating-whatsapp-icon {
+    font-size: 3.5rem !important;
+    margin-right: 2vw !important;
+  }
+  .floating-whatsapp-text {
+    font-size: 2.2rem !important;
+  }
+}

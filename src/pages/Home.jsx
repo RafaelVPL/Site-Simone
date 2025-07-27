@@ -5,7 +5,6 @@ import './Home.css'
 export default function Home() {
   const whatsappNumber = '5524981548739';
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
-  const email = 'simonedeomed@gmail.com';
 
   // Pop-in/out effect for left, right, contact, and maps sections
   const leftRef = useRef();
@@ -95,9 +94,17 @@ export default function Home() {
         rel="noopener noreferrer"
         className="floating-whatsapp-btn"
         aria-label="Abrir WhatsApp"
+        style={isMobile ? {
+          right: '3vw',
+          bottom: '3vw',
+          fontSize: '2.2rem',
+          padding: '2.2vw 6vw 2.2vw 4vw',
+          borderRadius: '6vw',
+          gap: '2vw'
+        } : {}}
       >
-        <span className="floating-whatsapp-icon">💬</span>
-        <span className="floating-whatsapp-text">WhatsApp</span>
+        <span className="floating-whatsapp-icon" style={isMobile ? { fontSize: '3.2rem', marginRight: '1vw' } : {}}>💬</span>
+        <span className="floating-whatsapp-text" style={isMobile ? { fontSize: '2rem' } : {}}>WhatsApp</span>
       </a>
       <div
         className={`home-layout container py-5 ${visible[0] ? 'pop-in-main' : 'pop-out-main'}${isMobile ? ' mobile-layout' : ''}`}
@@ -123,7 +130,7 @@ export default function Home() {
                 minWidth: 0,
                 height: 'auto',
                 minHeight: 'calc(100vh - 4rem)',
-                padding: '2.2rem 0.7rem 2.2rem 0.7rem',
+                padding: '6vw 2vw 2vw 2vw',
                 margin: '0 auto',
                 boxSizing: 'border-box',
                 justifyContent: 'center',
@@ -134,23 +141,24 @@ export default function Home() {
             >
               <h1 style={{
                 fontFamily: 'Tangerine',
-                fontSize: '2.7rem',
+                fontSize: '7vw',
                 fontWeight: 700,
-                letterSpacing: '0.08em'
+                letterSpacing: '0.08em',
+                marginBottom: '2vw'
               }}>Dra. Simone L. S. Deo</h1>
               <h2 style={{
-                fontSize: '1.45rem',
-                marginBottom: '1.2rem',
+                fontSize: '4vw',
+                marginBottom: '2vw',
                 fontWeight: 700
               }}>Psiquiatria</h2>
               <p style={{
                 fontWeight: 700,
-                fontSize: '1.22rem',
+                fontSize: '4.5vw',
                 color: '#232946',
                 lineHeight: '1.38',
                 maxWidth: '92vw',
                 margin: '0 auto',
-                padding: '0 1.2rem'
+                padding: '0 2vw'
               }}>
                 Sou médica, com pós-graduação em Medicina Interna, Psiquiatria e Psicofarmacologia.<br /><br />
                 Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
@@ -161,8 +169,9 @@ export default function Home() {
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
               </p>
               <h2 style={{
-                fontSize: '1.45rem',
-                fontWeight: 700
+                fontSize: '4vw',
+                fontWeight: 700,
+                marginTop: '2vw'
               }}>CRM 52.076388-8</h2>
               <img
                 src={simoneImg}
@@ -176,8 +185,8 @@ export default function Home() {
                   }`,
                   maxWidth: '88vw',
                   width: '88vw',
-                  height: '48vh',
-                  margin: '2rem auto 0 auto',
+                  height: '48vw',
+                  margin: '4vw auto 0 auto',
                   display: 'block',
                   objectFit: 'cover',
                   borderRadius: '1.2rem'
@@ -241,60 +250,29 @@ export default function Home() {
         )}
       </div>
       <div
-        className={`contact-section contact-section-centered ${visible[2] ? 'pop-in' : 'pop-out'}`}
-        ref={contactRef}
-        style={{
-          marginTop: isMobile ? '0.2rem' : '0.5rem',
-          marginBottom: isMobile ? '0.7rem' : '1.2rem',
-          gap: isMobile ? '0.5rem' : '1.2rem',
-          padding: isMobile ? '0 0.5rem' : undefined
-        }}
-      >
-        {/* WhatsApp button removed */}
-        <div className="contact-email" style={{ fontWeight: 700, fontSize: isMobile ? '1.08rem' : '1.18rem' }}>
-          <span style={{ color: '#181818' }}>Email: </span>
-          <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
-            style={{
-              color:
-                typeof window !== "undefined" && window.document.documentElement.classList.contains('dark')
-                  ? '#14316c'
-                  : '#ff5c8a',
-              fontWeight: 700,
-              transition: 'color 0.13s cubic-bezier(.23,1.01,.32,1)',
-              fontSize: isMobile ? '1.08rem' : '1.18rem'
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {email}
-          </a>
-        </div>
-      </div>
-      <div
         className={`home-layout container py-5 ${visible[3] ? 'pop-in-main' : 'pop-out-main'}`}
         style={isMobile ? {
-          marginTop: '0.2rem',
-          marginBottom: '0.2rem',
+          marginTop: '2vw',
+          marginBottom: '2vw',
           gap: 0,
           padding: 0
         } : { marginTop: '1.2rem', marginBottom: '1.2rem' }}
       >
-        <div className="home-left" ref={mapsRef} style={isMobile ? { padding: '0.2rem 0.2rem' } : {}}>
+        <div className="home-left" ref={mapsRef} style={isMobile ? { padding: '0.2vw 0.2vw' } : {}}>
           <div className="maps-bar-title" style={{
             textAlign: 'center',
             width: '100%',
-            fontSize: isMobile ? '0.92rem' : undefined,
-            marginBottom: isMobile ? '0.3rem' : undefined,
-            padding: isMobile ? '0 0.1rem' : undefined
+            fontSize: isMobile ? '3vw' : undefined,
+            marginBottom: isMobile ? '1vw' : undefined,
+            padding: isMobile ? '0 0.1vw' : undefined
           }}>
             <span style={{ color: '#181818' }}>Endereço para as consultas:</span>
             <div
               className={typeof window !== "undefined" && window.document.documentElement.classList.contains('dark') ? "maps-address-dark" : "maps-address-light"}
               style={{
-                fontSize: isMobile ? '0.85rem' : undefined,
-                padding: isMobile ? '0 0.1rem' : undefined,
-                marginTop: isMobile ? '0.08rem' : undefined
+                fontSize: isMobile ? '2.5vw' : undefined,
+                padding: isMobile ? '0 0.1vw' : undefined,
+                marginTop: isMobile ? '0.5vw' : undefined
               }}
             >
               {clinicAddress}
