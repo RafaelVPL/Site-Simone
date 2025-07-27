@@ -973,10 +973,32 @@ html.dark .site-bg-texture {
     display: block;
     pointer-events: none;
   }
+  .home-left.caduceus-bg::before {
+    display: block;
+    width: 68vw;
+    max-width: 340px;
+    height: 68vw;
+    max-height: 340px;
+    opacity: 0.32;
+    left: 50%;
+    top: 82%; /* move caduceus much further down, behind text */
+    transform: translate(-50%, -50%);
+    background: url('../assets/caduceus.png') no-repeat center center;
+    background-size: contain;
+    z-index: -1;
+    pointer-events: none;
+  }
+  /* Bring second portion of text up slightly */
+  .home-left p {
+    margin-bottom: -8vw;
+  }
+  .mobile-caduceus-img {
+    display: none !important; /* hide the div, use ::before only */
+  }
   .mobile-section-instagram iframe,
   .mobile-section-facebook iframe {
     width: 92vw !important;
-    height: 260vw !important; /* much taller */
+    height: 260vw !important;
     max-width: 92vw !important;
     max-height: 260vw !important;
     border-radius: 1.2rem;

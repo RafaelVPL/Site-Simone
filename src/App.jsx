@@ -54,20 +54,36 @@ function App() {
         <div style={{ position: 'relative', minHeight: '100vh' }}>
           <div className="topbar">
             <span className="topbar-title">Bem vindo!</span>
-            {/* Always hide links and mode button on mobile */}
-            <nav className="topbar-links" style={{ display: 'none' }} />
+            {/* PC: show nav links centered, mobile: hide */}
+            <nav
+              className="topbar-links"
+              style={{
+                display: window.innerWidth > 900 ? 'flex' : 'none',
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <Link to="/" className="topbar-link">Início</Link>
+              <Link to="/contact" className="topbar-link">Contatos</Link>
+            </nav>
+            {/* PC: show mode button on right, mobile: hide */}
             <button
               className="topbar-mode-btn"
-              style={{ display: 'none' }}
+              style={{
+                display: window.innerWidth > 900 ? 'inline-block' : 'none',
+                marginLeft: 'auto'
+              }}
+              onClick={handleToggleMode}
               aria-label="Alternar modo claro/escuro"
             >
               <span className="topbar-mode-icon">{darkMode ? '🌙' : '☀️'}</span>
             </button>
-            {/* Always show mobile dropdown menu */}
+            {/* Mobile: show dropdown only */}
             <div
               className={`topbar-dropdown${dropdownOpen ? ' open' : ''}`}
               ref={dropdownRef}
-              style={{ display: 'inline-block' }}
+              style={{ display: window.innerWidth <= 900 ? 'inline-block' : 'none' }}
             >
               <button
                 className="topbar-dropdown-btn"
