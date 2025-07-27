@@ -1008,3 +1008,29 @@ html.dark .site-bg-texture {
     border: none;
   }
 }
+
+/* Mobile: caduceus centered behind second portion of text, does not push text down */
+@media (max-width: 900px) {
+  .home-left.caduceus-bg::before {
+    display: block;
+    width: 68vw;
+    max-width: 340px;
+    height: 68vw;
+    max-height: 340px;
+    opacity: 0.32;
+    left: 50%;
+    top: 62%; /* center caduceus behind second portion of text */
+    transform: translate(-50%, -50%);
+    background: url('../assets/caduceus.png') no-repeat center center;
+    background-size: contain;
+    z-index: -1;
+    pointer-events: none;
+  }
+  /* Remove margin-bottom hack, let text flow naturally */
+  .home-left p {
+    margin-bottom: 0;
+  }
+  .mobile-caduceus-img {
+    display: none !important;
+  }
+}
