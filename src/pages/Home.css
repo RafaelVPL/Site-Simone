@@ -1069,3 +1069,56 @@ html.dark .site-bg-texture {
     display: none !important;
   }
 }
+
+/* MOBILE: caduceus way down, dropdown and buttons bigger, first text font matches second */
+@media (max-width: 900px) {
+  .home-left.caduceus-bg .caduceus-mobile-bg {
+    position: absolute;
+    left: 50%;
+    top: 75%; /* move caduceus way down, ~25% from top */
+    transform: translate(-50%, -50%);
+    width: 68vw;
+    height: 68vw;
+    max-width: 340px;
+    max-height: 340px;
+    background: url('../assets/caduceus.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.32;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+  }
+  /* Hide old .mobile-caduceus-img and ::before for mobile */
+  .mobile-caduceus-img,
+  .home-left.caduceus-bg::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+  }
+}
+
+/* Make dropdown and buttons bigger on mobile */
+@media (max-width: 900px), (pointer: coarse) {
+  .topbar-dropdown-btn {
+    font-size: 2.2rem !important;
+    padding: 1.2rem 2.2rem !important;
+    border-radius: 1.2rem !important;
+  }
+  .topbar-dropdown-list {
+    min-width: 220px !important;
+    padding: 1.2rem 0.7rem !important;
+    border-radius: 1.2rem !important;
+    gap: 1.2rem !important;
+  }
+  .topbar-dropdown-link {
+    font-size: 1.45rem !important;
+    padding: 1.1rem 2rem !important;
+    border-radius: 1.1rem !important;
+  }
+  .topbar-dropdown-mode-btn {
+    font-size: 1.45rem !important;
+    padding: 1.1rem 2rem !important;
+    border-radius: 1.1rem !important;
+    margin-top: 1.2rem !important;
+  }
+}

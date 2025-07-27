@@ -356,10 +356,10 @@ export default function Home() {
                 marginBottom: '2vw',
                 fontWeight: 700
               }}>Psiquiatria</h2>
-              {/* First portion of text */}
+              {/* First portion of text - font size matches second portion */}
               <div style={{
                 fontWeight: 700,
-                fontSize: '4vw',
+                fontSize: '4vw', // match second portion
                 color: '#232946',
                 lineHeight: '1.13',
                 maxWidth: '92vw',
