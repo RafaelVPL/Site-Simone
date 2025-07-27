@@ -539,14 +539,14 @@ html.dark .site-bg-texture {
   }
 
   .mobile-caduceus-img {
-    width: 60vw;
-    height: 60vw;
-    max-width: 320px;
-    max-height: 320px;
+    width: 68vw;
+    height: 68vw;
+    max-width: 340px;
+    max-height: 340px;
     background: url('../assets/caduceus.png') no-repeat center center;
     background-size: contain;
     opacity: 0.32;
-    margin-top: 6vw;
+    margin-top: 12vw;
     margin-bottom: 2vw;
     display: block;
     pointer-events: none;
@@ -671,9 +671,9 @@ html.dark .site-bg-texture {
   .mobile-section-instagram iframe,
   .mobile-section-facebook iframe {
     width: 92vw !important;
-    height: 140vw !important;
+    height: 180vw !important;
     max-width: 92vw !important;
-    max-height: 140vw !important;
+    max-height: 180vw !important;
     border-radius: 1.2rem;
     display: block;
     margin: 0 auto;
@@ -955,5 +955,34 @@ html.dark .site-bg-texture {
   }
   .home-right.pc-right .social-embed:last-child {
     margin-bottom: 0;
+  }
+}
+
+/* Mobile layout: move caduceus down, make it slightly bigger, make social embeds taller */
+@media (max-width: 900px) {
+  .mobile-caduceus-img {
+    width: 68vw;
+    height: 68vw;
+    max-width: 340px;
+    max-height: 340px;
+    background: url('../assets/caduceus.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.32;
+    margin-top: 12vw;
+    margin-bottom: 2vw;
+    display: block;
+    pointer-events: none;
+  }
+  .mobile-section-instagram iframe,
+  .mobile-section-facebook iframe {
+    width: 92vw !important;
+    height: 180vw !important;
+    max-width: 92vw !important;
+    max-height: 180vw !important;
+    border-radius: 1.2rem;
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    border: none;
   }
 }

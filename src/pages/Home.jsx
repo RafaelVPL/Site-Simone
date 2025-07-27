@@ -156,7 +156,7 @@ export default function Home() {
                 Acredito que cada pessoa carrega uma história única, e por isso, meu atendimento é feito com naturalidade, empatia, ética e acolhimento.<br /><br />
                 Meu compromisso é oferecer um cuidado personalizado, respeitando as necessidades e objetivos de cada paciente.<br /><br />
                 Mais do que tratar a mente, meu propósito é cuidar das pessoas - escutando, orientando e criando um plano de tratamento individualizado que faça sentido para sua rotina e seu momento de vida.<br /><br />
-                A saúde mental é um reflexo do que cultivamos dentro e fora. Assim sendo, não é alcançado somente através de remédios.<br /><br />
+                A saúde mental é um reflexo do que cultivamos dentro e fora. Assim sendo, não é alcançada somente através de remédios.<br /><br />
                 A estabilidade começa com um firme propósito da pessoa tomar as rédeas da própria vida, e eu me proponho a ser acessível, e a caminharmos juntos rumo aos seus objetivos.<br /><br />
                 Caso tenha mais dúvidas, entre em contato hoje mesmo.
               </p>
@@ -383,11 +383,11 @@ export default function Home() {
                     boxShadow: '0 2px 18px rgba(40,60,120,0.14)'
                   }}
                 />
-                {/* Caduceus image moved down, centered with second portion of text */}
+                {/* Caduceus image moved further down, slightly bigger */}
                 <div
                   className="mobile-caduceus-img"
                   style={{
-                    marginTop: '6vw',
+                    marginTop: '12vw',
                     marginBottom: '2vw'
                   }}
                 />
@@ -504,7 +504,7 @@ export default function Home() {
                   title="Instagram Post"
                   src={instagramEmbeds[currentInstagramEmbed]}
                   width="92vw"
-                  height="140vw"
+                  height="180vw"
                   frameBorder="0"
                   scrolling="no"
                   allowtransparency="true"
@@ -529,7 +529,7 @@ export default function Home() {
                   title="Facebook Post"
                   src={facebookEmbeds[currentFacebookEmbed]}
                   width="92vw"
-                  height="140vw"
+                  height="180vw"
                   style={{
                     border: 'none',
                     overflow: 'hidden',
