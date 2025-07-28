@@ -14,7 +14,7 @@ export default function Home() {
   const rightRef = useRef();
   const contactRef = useRef();
   const mapsRef = useRef();
-  const [visible, setVisible] = useState([false, false, false, false]);
+  const [, setVisible] = useState([false, false, false, false]);
 
   useEffect(() => {
     function onScroll() {

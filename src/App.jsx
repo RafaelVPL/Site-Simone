@@ -65,7 +65,7 @@ function App() {
               }}
             >
               <Link to="/" className="topbar-link">Início</Link>
-              <Link to="/contact" className="topbar-link">Contatos</Link>
+              <Link to="/contatos" className="topbar-link">Contatos</Link>
             </nav>
             {/* PC: show mode button on right, mobile: hide */}
             <button
@@ -98,7 +98,7 @@ function App() {
               </button>
               <div className="topbar-dropdown-list">
                 <Link to="/" className="topbar-dropdown-link" onClick={() => setDropdownOpen(false)}>Início</Link>
-                <Link to="/contact" className="topbar-dropdown-link" onClick={() => setDropdownOpen(false)}>Contatos</Link>
+                <Link to="/contatos" className="topbar-dropdown-link" onClick={() => setDropdownOpen(false)}>Contatos</Link>
                 <button
                   className="topbar-dropdown-mode-btn"
                   onClick={() => { handleToggleMode(); setDropdownOpen(false); }}
@@ -112,7 +112,7 @@ function App() {
           <div className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/contatos" element={<Contact />} />
             </Routes>
           </div>
           <div className="bottom-gradient-effect" />

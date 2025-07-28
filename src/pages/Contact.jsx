@@ -39,42 +39,42 @@ export default function Contatos() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Ensure background covers whole page on mobile
-  React.useEffect(() => {
-    // Add a class to body to force background to cover whole page for contact
-    document.body.classList.add('contact-full-bg');
-    return () => {
-      document.body.classList.remove('contact-full-bg');
-    };
-  }, []);
-
   return (
     <div
       className="contact-page-centered contact-full-bg-container"
-      style={isMobile ? { fontSize: '1.25rem', padding: '2.5rem 0.7rem 2rem 0.7rem', minHeight: '100vh' } : { minHeight: '70vh' }}
+      style={isMobile
+        ? {
+            fontSize: '2.2rem',
+            padding: '4.2rem 0.1rem 2.8rem 0.1rem',
+            minHeight: '100vh',
+            width: '100vw',
+            boxSizing: 'border-box'
+          }
+        : { minHeight: '70vh' }
+      }
     >
-      <h1 className="contact-title" style={isMobile ? { fontSize: '2.4rem', marginBottom: '2.2rem' } : {}}>Contatos</h1>
+      <h1 className="contact-title" style={isMobile ? { fontSize: '3.2rem', marginBottom: '2.8rem' } : {}}>Contatos</h1>
       <div className="contact-list-centered">
-        <div className="contact-item-centered" style={isMobile ? { fontSize: '1.25rem', gap: '1.1rem' } : {}}>
-          <span className="contact-label" style={isMobile ? { fontSize: '1.18rem' } : {}}>WhatsApp:</span>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="contact-value contact-whatsapp" style={isMobile ? { fontSize: '1.25rem' } : {}}>
+        <div className="contact-item-centered" style={isMobile ? { fontSize: '2.2rem', gap: '1.7rem' } : {}}>
+          <span className="contact-label" style={isMobile ? { fontSize: '1.7rem' } : {}}>WhatsApp:</span>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="contact-value contact-whatsapp" style={isMobile ? { fontSize: '2.2rem' } : {}}>
             {whatsappNumber}
           </a>
-          <span className="contact-desc" style={isMobile ? { fontSize: '1.08rem' } : {}}> (Agendamento, dúvidas, informações)</span>
+          <span className="contact-desc" style={isMobile ? { fontSize: '1.45rem' } : {}}> (Agendamento, dúvidas, informações)</span>
         </div>
-        <div className="contact-item-centered" style={isMobile ? { fontSize: '1.25rem', gap: '1.1rem' } : {}}>
-          <span className="contact-label" style={isMobile ? { fontSize: '1.18rem' } : {}}>Email:</span>
-          <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer" className="contact-value contact-email" style={isMobile ? { fontSize: '1.25rem' } : {}}>
+        <div className="contact-item-centered" style={isMobile ? { fontSize: '2.2rem', gap: '1.7rem' } : {}}>
+          <span className="contact-label" style={isMobile ? { fontSize: '1.7rem' } : {}}>Email:</span>
+          <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer" className="contact-value contact-email" style={isMobile ? { fontSize: '2.2rem' } : {}}>
             {email}
           </a>
-          <span className="contact-desc" style={isMobile ? { fontSize: '1.08rem' } : {}}> (Agendamento, dúvidas, informações)</span>
+          <span className="contact-desc" style={isMobile ? { fontSize: '1.45rem' } : {}}> (Agendamento, dúvidas, informações)</span>
         </div>
-        <div className="contact-item-centered" style={isMobile ? { fontSize: '1.25rem', gap: '1.1rem' } : {}}>
-          <span className="contact-label" style={isMobile ? { fontSize: '1.18rem' } : {}}>Urgências:</span>
-          <a href={emergencyWhatsappLink} target="_blank" rel="noopener noreferrer" className="contact-value contact-emergency" style={isMobile ? { fontSize: '1.25rem' } : {}}>
+        <div className="contact-item-centered" style={isMobile ? { fontSize: '2.2rem', gap: '1.7rem' } : {}}>
+          <span className="contact-label" style={isMobile ? { fontSize: '1.7rem' } : {}}>Urgências:</span>
+          <a href={emergencyWhatsappLink} target="_blank" rel="noopener noreferrer" className="contact-value contact-emergency" style={isMobile ? { fontSize: '2.2rem' } : {}}>
             {emergencyNumber}
           </a>
-          <span className="contact-desc" style={isMobile ? { fontSize: '1.08rem' } : {}}> (Contato exclusivo para urgências)</span>
+          <span className="contact-desc" style={isMobile ? { fontSize: '1.45rem' } : {}}> (Contato para urgências)</span>
         </div>
       </div>
     </div>
