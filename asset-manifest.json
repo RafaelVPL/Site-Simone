@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.b7423f62.css",
+    "main.css": "/static/css/main.6044de56.css",
     "main.js": "/static/js/main.f523b967.js",
     "static/media/1452.jpg": "/static/media/1452.b1d82fb1b874a8b676e9.jpg",
     "static/media/1668.jpg": "/static/media/1668.01a4aef098a6c66974dd.jpg",
@@ -9,11 +9,11 @@
     "static/media/deomed1.png": "/static/media/deomed1.3c041bb4aeb5b6980616.png",
     "static/media/deomed2.png": "/static/media/deomed2.ab463171814f5254b01f.png",
     "index.html": "/index.html",
-    "main.b7423f62.css.map": "/static/css/main.b7423f62.css.map",
+    "main.6044de56.css.map": "/static/css/main.6044de56.css.map",
     "main.f523b967.js.map": "/static/js/main.f523b967.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7423f62.css",
+    "static/css/main.6044de56.css",
     "static/js/main.f523b967.js"
   ]
 }
