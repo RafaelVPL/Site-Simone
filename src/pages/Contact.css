@@ -145,40 +145,39 @@ html.dark .contact-email {
   color: #e11d48 !important;
 }
 
-/* Make contact page text bigger on mobile */
+/* Make contact page text WAY bigger on mobile and background cover full width */
 @media (max-width: 900px) {
   .contact-page,
-  .contact-page-centered {
-    font-size: 1.25rem;
-    padding: 2.5rem 0.7rem 2rem 0.7rem;
+  .contact-page-centered,
+  .contact-full-bg-container {
+    font-size: 1.7rem !important;
+    padding: 3.2rem 0.2rem 2.2rem 0.2rem !important;
+    min-width: 100vw !important;
+    width: 100vw !important;
+    box-sizing: border-box;
   }
   .contact-title {
-    font-size: 2.4rem;
-    margin-bottom: 2.2rem;
+    font-size: 2.9rem !important;
+    margin-bottom: 2.5rem !important;
   }
   .contact-label {
-    font-size: 1.18rem;
+    font-size: 1.45rem !important;
   }
   .contact-value {
-    font-size: 1.25rem;
+    font-size: 1.7rem !important;
   }
   .contact-desc {
-    font-size: 1.08rem;
+    font-size: 1.22rem !important;
   }
   .contact-item,
   .contact-item-centered {
-    font-size: 1.25rem;
-    gap: 1.1rem;
+    font-size: 1.7rem !important;
+    gap: 1.3rem !important;
   }
-}
-
-/* Ensure background covers whole page on mobile for contact */
-@media (max-width: 900px) {
   body.contact-full-bg {
     min-height: 100vh !important;
     width: 100vw !important;
     background: #fff !important;
-    /* fallback for white, but your App.css/flower-bg will still show */
     position: relative;
     overflow-x: hidden;
   }
@@ -188,6 +187,5 @@ html.dark .contact-email {
     background: transparent !important;
     position: relative;
     z-index: 1;
-    /* let the flower-bg and site-bg-texture show through */
   }
 }
