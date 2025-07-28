@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import deomed2 from '../assets/deomed2.png';
 import './Contact.css';
 
-export default function Contact() {
+export default function Contatos() {
   const whatsappNumber = '24 98154-8739';
   const whatsappLink = 'https://wa.me/5524981548739';
   const email = 'simonedeomed@gmail.com';
@@ -39,10 +39,19 @@ export default function Contact() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Ensure background covers whole page on mobile
+  React.useEffect(() => {
+    // Add a class to body to force background to cover whole page for contact
+    document.body.classList.add('contact-full-bg');
+    return () => {
+      document.body.classList.remove('contact-full-bg');
+    };
+  }, []);
+
   return (
     <div
-      className="contact-page-centered"
-      style={isMobile ? { fontSize: '1.25rem', padding: '2.5rem 0.7rem 2rem 0.7rem' } : {}}
+      className="contact-page-centered contact-full-bg-container"
+      style={isMobile ? { fontSize: '1.25rem', padding: '2.5rem 0.7rem 2rem 0.7rem', minHeight: '100vh' } : { minHeight: '70vh' }}
     >
       <h1 className="contact-title" style={isMobile ? { fontSize: '2.4rem', marginBottom: '2.2rem' } : {}}>Contatos</h1>
       <div className="contact-list-centered">

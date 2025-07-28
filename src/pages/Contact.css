@@ -171,3 +171,23 @@ html.dark .contact-email {
     gap: 1.1rem;
   }
 }
+
+/* Ensure background covers whole page on mobile for contact */
+@media (max-width: 900px) {
+  body.contact-full-bg {
+    min-height: 100vh !important;
+    width: 100vw !important;
+    background: #fff !important;
+    /* fallback for white, but your App.css/flower-bg will still show */
+    position: relative;
+    overflow-x: hidden;
+  }
+  .contact-full-bg-container {
+    min-height: 100vh !important;
+    width: 100vw !important;
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+    /* let the flower-bg and site-bg-texture show through */
+  }
+}
